@@ -1,0 +1,4 @@
+go 1.19
+
+use tools/gen-api
+use .

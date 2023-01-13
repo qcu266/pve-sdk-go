@@ -1,0 +1,31 @@
+package pve
+
+import (
+	"context"
+)
+
+type VersionRequest struct {
+	Test *string `query:"test,omitempty"`
+}
+
+type VersionResponse struct {
+	Console *string `json:"console,omitempty"`
+	Release string  `json:"release"`
+	Repoid  string  `json:"repoid"`
+	Version string  `json:"version"`
+}
+
+func (c *Client) Version(ctx context.Context, request *VersionRequest) (*VersionResponse, error) {
+
+	method := "GET"
+	path := "/version"
+
+	var response VersionResponse
+
+	err := c.apiCall(ctx, method, path, request, &response)
+	if err != nil {
+		return nil, err
+	}
+
+	return &response, nil
+}
