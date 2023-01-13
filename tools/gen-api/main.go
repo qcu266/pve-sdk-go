@@ -18,8 +18,10 @@ func main() {
 	flag.StringVar(&outputDir, "output-dir", "pve",
 		"specific pve api client code output dir")
 
+	flag.Parse()
+
 	if schemaFile == "" {
-		fmt.Println("schema-filé not specific.")
+		fmt.Println("schema-file not specific.")
 		os.Exit(1)
 	}
 
