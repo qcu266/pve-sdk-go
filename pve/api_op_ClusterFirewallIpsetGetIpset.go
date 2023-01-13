@@ -10,14 +10,14 @@ type ClusterFirewallIpsetGetIpsetRequest struct {
 	Name string `query:"name,omitempty"` // IP set name.
 }
 
+type ClusterFirewallIpsetGetIpsetResponse []ClusterFirewallIpsetGetIpsetResponseItem
+
 type ClusterFirewallIpsetGetIpsetResponseItem struct {
 	Cidr    string  `json:"cidr,omitempty"`    //
 	Comment *string `json:"comment,omitempty"` //
 	Digest  string  `json:"digest,omitempty"`  // Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 	Nomatch *bool   `json:"nomatch,omitempty"` //
 }
-
-type ClusterFirewallIpsetGetIpsetResponse []ClusterFirewallIpsetGetIpsetResponseItem
 
 // List IPSet content
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall/ipset/{name}

@@ -8,12 +8,12 @@ import (
 
 type ClusterAcmeDirectoriesGetDirectoriesRequest interface{}
 
+type ClusterAcmeDirectoriesGetDirectoriesResponse []ClusterAcmeDirectoriesGetDirectoriesResponseItem
+
 type ClusterAcmeDirectoriesGetDirectoriesResponseItem struct {
 	Name string `json:"name,omitempty"` //
 	Url  string `json:"url,omitempty"`  // URL of ACME CA directory endpoint.
 }
-
-type ClusterAcmeDirectoriesGetDirectoriesResponse []ClusterAcmeDirectoriesGetDirectoriesResponseItem
 
 // Get named known ACME directory endpoints.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/acme/directories

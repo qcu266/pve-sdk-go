@@ -10,14 +10,6 @@ type AccessUsersReadUserRequest struct {
 	Userid string `query:"userid,omitempty"` // User ID
 }
 
-type AccessUsersReadUserResponseGroupsItem string
-
-type AccessUsersReadUserResponseTokens struct {
-	Comment *string `json:"comment,omitempty"` //
-	Expire  *int64  `json:"expire,omitempty"`  // API token expiration date (seconds since epoch). '0' means no expiration date.
-	Privsep *bool   `json:"privsep,omitempty"` // Restrict API token privileges with separate ACLs (default), or give full privileges of corresponding user.
-}
-
 type AccessUsersReadUserResponse struct {
 	Comment   *string                                  `json:"comment,omitempty"`   //
 	Email     *string                                  `json:"email,omitempty"`     //
@@ -28,6 +20,14 @@ type AccessUsersReadUserResponse struct {
 	Keys      *string                                  `json:"keys,omitempty"`      // Keys for two factor auth (yubico).
 	Lastname  *string                                  `json:"lastname,omitempty"`  //
 	Tokens    *AccessUsersReadUserResponseTokens       `json:"tokens,omitempty"`    //
+}
+
+type AccessUsersReadUserResponseGroupsItem string
+
+type AccessUsersReadUserResponseTokens struct {
+	Comment *string `json:"comment,omitempty"` //
+	Expire  *int64  `json:"expire,omitempty"`  // API token expiration date (seconds since epoch). '0' means no expiration date.
+	Privsep *bool   `json:"privsep,omitempty"` // Restrict API token privileges with separate ACLs (default), or give full privileges of corresponding user.
 }
 
 // Get user configuration.

@@ -12,14 +12,14 @@ type NodesQemuFirewallIpsetGetIpsetRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesQemuFirewallIpsetGetIpsetResponse []NodesQemuFirewallIpsetGetIpsetResponseItem
+
 type NodesQemuFirewallIpsetGetIpsetResponseItem struct {
 	Cidr    string  `json:"cidr,omitempty"`    //
 	Comment *string `json:"comment,omitempty"` //
 	Digest  string  `json:"digest,omitempty"`  // Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 	Nomatch *bool   `json:"nomatch,omitempty"` //
 }
-
-type NodesQemuFirewallIpsetGetIpsetResponse []NodesQemuFirewallIpsetGetIpsetResponseItem
 
 // List IPSet content
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/firewall/ipset/{name}

@@ -8,10 +8,10 @@ import (
 
 type ClusterAcmeIndexRequest interface{}
 
+type ClusterAcmeIndexResponse []ClusterAcmeIndexResponseItem
+
 type ClusterAcmeIndexResponseItem struct {
 }
-
-type ClusterAcmeIndexResponse []ClusterAcmeIndexResponseItem
 
 // ACMEAccount index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/acme

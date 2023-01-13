@@ -8,11 +8,11 @@ import (
 
 type PoolsIndexRequest interface{}
 
+type PoolsIndexResponse []PoolsIndexResponseItem
+
 type PoolsIndexResponseItem struct {
 	Poolid string `json:"poolid,omitempty"` //
 }
-
-type PoolsIndexResponse []PoolsIndexResponseItem
 
 // Pool index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/pools

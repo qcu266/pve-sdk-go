@@ -11,10 +11,10 @@ type NodesTasksUpidIndexRequest struct {
 	Upid string `query:"upid,omitempty"` //
 }
 
+type NodesTasksUpidIndexResponse []NodesTasksUpidIndexResponseItem
+
 type NodesTasksUpidIndexResponseItem struct {
 }
-
-type NodesTasksUpidIndexResponse []NodesTasksUpidIndexResponseItem
 
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/tasks/{upid}
 func (c *Client) NodesTasksUpidIndex(ctx context.Context, request *NodesTasksUpidIndexRequest) (*NodesTasksUpidIndexResponse, error) {

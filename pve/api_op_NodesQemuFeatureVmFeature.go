@@ -13,12 +13,12 @@ type NodesQemuFeatureVmFeatureRequest struct {
 	Vmid     int64   `query:"vmid,omitempty"`     // The (unique) ID of the VM.
 }
 
-type NodesQemuFeatureVmFeatureResponseNodesItem string
-
 type NodesQemuFeatureVmFeatureResponse struct {
 	HasFeature bool                                         `json:"hasFeature,omitempty"` //
 	Nodes      []NodesQemuFeatureVmFeatureResponseNodesItem `json:"nodes,omitempty"`      //
 }
+
+type NodesQemuFeatureVmFeatureResponseNodesItem string
 
 // Check if feature for virtual machine is available.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/feature

@@ -11,11 +11,11 @@ type NodesQemuStatusVmcmdidxRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesQemuStatusVmcmdidxResponse []NodesQemuStatusVmcmdidxResponseItem
+
 type NodesQemuStatusVmcmdidxResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` //
 }
-
-type NodesQemuStatusVmcmdidxResponse []NodesQemuStatusVmcmdidxResponseItem
 
 // Directory index
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/status

@@ -8,11 +8,11 @@ import (
 
 type ClusterBackupIndexRequest interface{}
 
+type ClusterBackupIndexResponse []ClusterBackupIndexResponseItem
+
 type ClusterBackupIndexResponseItem struct {
 	Id string `json:"id,omitempty"` // The job ID.
 }
-
-type ClusterBackupIndexResponse []ClusterBackupIndexResponseItem
 
 // List vzdump backup schedule.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/backup

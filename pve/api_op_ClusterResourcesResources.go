@@ -10,6 +10,8 @@ type ClusterResourcesResourcesRequest struct {
 	Type *string `query:"type,omitempty"` //
 }
 
+type ClusterResourcesResourcesResponse []ClusterResourcesResourcesResponseItem
+
 type ClusterResourcesResourcesResponseItem struct {
 	CgroupMode *int64   `json:"cgroup-mode,omitempty"` // The cgroup mode the node operates under (when type == node).
 	Content    *string  `json:"content,omitempty"`     // Allowed storage content types (when type == storage).
@@ -32,8 +34,6 @@ type ClusterResourcesResourcesResponseItem struct {
 	Uptime     *int64   `json:"uptime,omitempty"`      // Node uptime in seconds (when type in node,qemu,lxc).
 	Vmid       *int64   `json:"vmid,omitempty"`        // The numerical vmid (when type in qemu,lxc).
 }
-
-type ClusterResourcesResourcesResponse []ClusterResourcesResourcesResponseItem
 
 // Resources index (cluster wide).
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/resources

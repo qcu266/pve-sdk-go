@@ -277,6 +277,11 @@ func genApiPayload(name string, tagName string, params *JsonSchema) []ApiPayload
 
 	result = append(result, payload)
 
+	// sort payload list
+	sort.Slice(result, func(i, j int) bool {
+		return strings.Compare(result[i].Name, result[j].Name) == -1
+	})
+
 	return result
 }
 

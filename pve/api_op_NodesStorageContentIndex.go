@@ -13,11 +13,7 @@ type NodesStorageContentIndexRequest struct {
 	Vmid    *int64  `query:"vmid,omitempty"`    // Only list images for this VM
 }
 
-// Last backup verification result, only useful for PBS storages.
-type NodesStorageContentIndexResponseItemVerification struct {
-	State string `json:"state,omitempty"` // Last backup verification state.
-	Upid  string `json:"upid,omitempty"`  // Last backup verification UPID.
-}
+type NodesStorageContentIndexResponse []NodesStorageContentIndexResponseItem
 
 type NodesStorageContentIndexResponseItem struct {
 	Ctime        *int64                                            `json:"ctime,omitempty"`        // Creation time (seconds since the UNIX Epoch).
@@ -33,7 +29,11 @@ type NodesStorageContentIndexResponseItem struct {
 	Volid        string                                            `json:"volid,omitempty"`        // Volume identifier.
 }
 
-type NodesStorageContentIndexResponse []NodesStorageContentIndexResponseItem
+// Last backup verification result, only useful for PBS storages.
+type NodesStorageContentIndexResponseItemVerification struct {
+	State string `json:"state,omitempty"` // Last backup verification state.
+	Upid  string `json:"upid,omitempty"`  // Last backup verification UPID.
+}
 
 // List storage content.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/storage/{storage}/content

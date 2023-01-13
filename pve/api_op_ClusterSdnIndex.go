@@ -8,11 +8,11 @@ import (
 
 type ClusterSdnIndexRequest interface{}
 
+type ClusterSdnIndexResponse []ClusterSdnIndexResponseItem
+
 type ClusterSdnIndexResponseItem struct {
 	Id string `json:"id,omitempty"` //
 }
-
-type ClusterSdnIndexResponse []ClusterSdnIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/sdn

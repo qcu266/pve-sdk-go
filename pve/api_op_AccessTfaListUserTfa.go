@@ -10,6 +10,9 @@ type AccessTfaListUserTfaRequest struct {
 	Userid string `query:"userid,omitempty"` // User ID
 }
 
+// A list of the user's TFA entries.
+type AccessTfaListUserTfaResponse []AccessTfaListUserTfaResponseItem
+
 // TFA Entry.
 type AccessTfaListUserTfaResponseItem struct {
 	Created     int64  `json:"created,omitempty"`     // Creation time of this entry as unix epoch.
@@ -18,9 +21,6 @@ type AccessTfaListUserTfaResponseItem struct {
 	Id          string `json:"id,omitempty"`          // The id used to reference this entry.
 	Type        string `json:"type,omitempty"`        // TFA Entry Type.
 }
-
-// A list of the user's TFA entries.
-type AccessTfaListUserTfaResponse []AccessTfaListUserTfaResponseItem
 
 // List TFA configurations of users.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/tfa/{userid}

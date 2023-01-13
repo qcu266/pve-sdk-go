@@ -11,13 +11,13 @@ type NodesQemuCloudinitCloudinitPendingRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesQemuCloudinitCloudinitPendingResponse []NodesQemuCloudinitCloudinitPendingResponseItem
+
 type NodesQemuCloudinitCloudinitPendingResponseItem struct {
 	Key string  `json:"key,omitempty"` // Configuration option name.
 	New *string `json:"new,omitempty"` // The new pending value.
 	Old *string `json:"old,omitempty"` // Value as it was used to generate the current cloudinit image.
 }
-
-type NodesQemuCloudinitCloudinitPendingResponse []NodesQemuCloudinitCloudinitPendingResponseItem
 
 // Get the cloudinit configuration with both current and pending values.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/cloudinit

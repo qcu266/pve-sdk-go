@@ -13,10 +13,10 @@ type NodesQemuRrddataRrddataRequest struct {
 	Vmid      int64   `query:"vmid,omitempty"`      // The (unique) ID of the VM.
 }
 
+type NodesQemuRrddataRrddataResponse []NodesQemuRrddataRrddataResponseItem
+
 type NodesQemuRrddataRrddataResponseItem struct {
 }
-
-type NodesQemuRrddataRrddataResponse []NodesQemuRrddataRrddataResponseItem
 
 // Read VM RRD statistics
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/rrddata

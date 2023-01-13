@@ -10,10 +10,10 @@ type NodesNetstatNetstatRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesNetstatNetstatResponse []NodesNetstatNetstatResponseItem
+
 type NodesNetstatNetstatResponseItem struct {
 }
-
-type NodesNetstatNetstatResponse []NodesNetstatNetstatResponseItem
 
 // Read tap/vm network device interface counters
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/netstat

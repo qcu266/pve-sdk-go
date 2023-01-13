@@ -11,14 +11,14 @@ type NodesLxcSnapshotListRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesLxcSnapshotListResponse []NodesLxcSnapshotListResponseItem
+
 type NodesLxcSnapshotListResponseItem struct {
 	Description string  `json:"description,omitempty"` // Snapshot description.
 	Name        string  `json:"name,omitempty"`        // Snapshot identifier. Value 'current' identifies the current VM.
 	Parent      *string `json:"parent,omitempty"`      // Parent snapshot identifier.
 	Snaptime    *int64  `json:"snaptime,omitempty"`    // Snapshot creation time
 }
-
-type NodesLxcSnapshotListResponse []NodesLxcSnapshotListResponseItem
 
 // List all snapshots.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}/snapshot

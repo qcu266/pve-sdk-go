@@ -8,6 +8,8 @@ import (
 
 type AccessAclReadAclRequest interface{}
 
+type AccessAclReadAclResponse []AccessAclReadAclResponseItem
+
 type AccessAclReadAclResponseItem struct {
 	Path      string `json:"path,omitempty"`      // Access control path
 	Propagate *bool  `json:"propagate,omitempty"` // Allow to propagate (inherit) permissions.
@@ -15,8 +17,6 @@ type AccessAclReadAclResponseItem struct {
 	Type      string `json:"type,omitempty"`      //
 	Ugid      string `json:"ugid,omitempty"`      //
 }
-
-type AccessAclReadAclResponse []AccessAclReadAclResponseItem
 
 // Get Access Control List (ACLs).
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/acl

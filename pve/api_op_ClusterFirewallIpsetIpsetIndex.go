@@ -8,13 +8,13 @@ import (
 
 type ClusterFirewallIpsetIpsetIndexRequest interface{}
 
+type ClusterFirewallIpsetIpsetIndexResponse []ClusterFirewallIpsetIpsetIndexResponseItem
+
 type ClusterFirewallIpsetIpsetIndexResponseItem struct {
 	Comment *string `json:"comment,omitempty"` //
 	Digest  string  `json:"digest,omitempty"`  // Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 	Name    string  `json:"name,omitempty"`    // IP set name.
 }
-
-type ClusterFirewallIpsetIpsetIndexResponse []ClusterFirewallIpsetIpsetIndexResponseItem
 
 // List IPSets
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall/ipset

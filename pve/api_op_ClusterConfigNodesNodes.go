@@ -8,11 +8,11 @@ import (
 
 type ClusterConfigNodesNodesRequest interface{}
 
+type ClusterConfigNodesNodesResponse []ClusterConfigNodesNodesResponseItem
+
 type ClusterConfigNodesNodesResponseItem struct {
 	Node string `json:"node,omitempty"` //
 }
-
-type ClusterConfigNodesNodesResponse []ClusterConfigNodesNodesResponseItem
 
 // Corosync node list.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/config/nodes

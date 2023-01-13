@@ -11,10 +11,10 @@ type NodesQemuFirewallIndexRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesQemuFirewallIndexResponse []NodesQemuFirewallIndexResponseItem
+
 type NodesQemuFirewallIndexResponseItem struct {
 }
-
-type NodesQemuFirewallIndexResponse []NodesQemuFirewallIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/firewall

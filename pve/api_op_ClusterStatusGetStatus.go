@@ -8,6 +8,8 @@ import (
 
 type ClusterStatusGetStatusRequest interface{}
 
+type ClusterStatusGetStatusResponse []ClusterStatusGetStatusResponseItem
+
 type ClusterStatusGetStatusResponseItem struct {
 	Id      string  `json:"id,omitempty"`      //
 	Ip      *string `json:"ip,omitempty"`      // [node] IP of the resolved nodename.
@@ -21,8 +23,6 @@ type ClusterStatusGetStatusResponseItem struct {
 	Type    string  `json:"type,omitempty"`    // Indicates the type, either cluster or node. The type defines the object properties e.g. quorate available for type cluster.
 	Version *int64  `json:"version,omitempty"` // [cluster] Current version of the corosync configuration file.
 }
-
-type ClusterStatusGetStatusResponse []ClusterStatusGetStatusResponseItem
 
 // Get cluster status information.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/status

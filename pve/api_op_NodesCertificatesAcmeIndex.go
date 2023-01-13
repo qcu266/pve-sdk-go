@@ -10,10 +10,10 @@ type NodesCertificatesAcmeIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCertificatesAcmeIndexResponse []NodesCertificatesAcmeIndexResponseItem
+
 type NodesCertificatesAcmeIndexResponseItem struct {
 }
-
-type NodesCertificatesAcmeIndexResponse []NodesCertificatesAcmeIndexResponseItem
 
 // ACME index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/certificates/acme

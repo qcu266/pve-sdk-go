@@ -10,10 +10,10 @@ type NodesServicesIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesServicesIndexResponse []NodesServicesIndexResponseItem
+
 type NodesServicesIndexResponseItem struct {
 }
-
-type NodesServicesIndexResponse []NodesServicesIndexResponseItem
 
 // Service list.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/services

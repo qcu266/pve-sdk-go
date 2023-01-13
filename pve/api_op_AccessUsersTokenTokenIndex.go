@@ -10,14 +10,14 @@ type AccessUsersTokenTokenIndexRequest struct {
 	Userid string `query:"userid,omitempty"` // User ID
 }
 
+type AccessUsersTokenTokenIndexResponse []AccessUsersTokenTokenIndexResponseItem
+
 type AccessUsersTokenTokenIndexResponseItem struct {
 	Comment *string `json:"comment,omitempty"` //
 	Expire  *int64  `json:"expire,omitempty"`  // API token expiration date (seconds since epoch). '0' means no expiration date.
 	Privsep *bool   `json:"privsep,omitempty"` // Restrict API token privileges with separate ACLs (default), or give full privileges of corresponding user.
 	Tokenid string  `json:"tokenid,omitempty"` // User-specific token identifier.
 }
-
-type AccessUsersTokenTokenIndexResponse []AccessUsersTokenTokenIndexResponseItem
 
 // Get user API tokens.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/users/{userid}/token

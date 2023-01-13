@@ -12,10 +12,10 @@ type NodesQemuSnapshotSnapshotCmdIdxRequest struct {
 	Vmid     int64  `query:"vmid,omitempty"`     // The (unique) ID of the VM.
 }
 
+type NodesQemuSnapshotSnapshotCmdIdxResponse []NodesQemuSnapshotSnapshotCmdIdxResponseItem
+
 type NodesQemuSnapshotSnapshotCmdIdxResponseItem struct {
 }
-
-type NodesQemuSnapshotSnapshotCmdIdxResponse []NodesQemuSnapshotSnapshotCmdIdxResponseItem
 
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/snapshot/{snapname}
 func (c *Client) NodesQemuSnapshotSnapshotCmdIdx(ctx context.Context, request *NodesQemuSnapshotSnapshotCmdIdxRequest) (*NodesQemuSnapshotSnapshotCmdIdxResponse, error) {

@@ -10,11 +10,11 @@ type ClusterAcmePluginsIndexRequest struct {
 	Type *string `query:"type,omitempty"` // Only list ACME plugins of a specific type
 }
 
+type ClusterAcmePluginsIndexResponse []ClusterAcmePluginsIndexResponseItem
+
 type ClusterAcmePluginsIndexResponseItem struct {
 	Plugin string `json:"plugin,omitempty"` // Unique identifier for ACME plugin instance.
 }
-
-type ClusterAcmePluginsIndexResponse []ClusterAcmePluginsIndexResponseItem
 
 // ACME plugin index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/acme/plugins

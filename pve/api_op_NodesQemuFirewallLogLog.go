@@ -13,12 +13,12 @@ type NodesQemuFirewallLogLogRequest struct {
 	Vmid  int64  `query:"vmid,omitempty"`  // The (unique) ID of the VM.
 }
 
+type NodesQemuFirewallLogLogResponse []NodesQemuFirewallLogLogResponseItem
+
 type NodesQemuFirewallLogLogResponseItem struct {
 	N int64  `json:"n,omitempty"` // Line number
 	T string `json:"t,omitempty"` // Line text
 }
-
-type NodesQemuFirewallLogLogResponse []NodesQemuFirewallLogLogResponseItem
 
 // Read firewall log
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/firewall/log

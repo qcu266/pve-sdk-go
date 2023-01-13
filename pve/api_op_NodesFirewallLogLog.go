@@ -12,12 +12,12 @@ type NodesFirewallLogLogRequest struct {
 	Start *int64 `query:"start,omitempty"` //
 }
 
+type NodesFirewallLogLogResponse []NodesFirewallLogLogResponseItem
+
 type NodesFirewallLogLogResponseItem struct {
 	N int64  `json:"n,omitempty"` // Line number
 	T string `json:"t,omitempty"` // Line text
 }
-
-type NodesFirewallLogLogResponse []NodesFirewallLogLogResponseItem
 
 // Read firewall log
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/firewall/log

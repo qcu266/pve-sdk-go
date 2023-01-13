@@ -10,11 +10,11 @@ type NodesFirewallRulesGetRulesRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesFirewallRulesGetRulesResponse []NodesFirewallRulesGetRulesResponseItem
+
 type NodesFirewallRulesGetRulesResponseItem struct {
 	Pos int64 `json:"pos,omitempty"` //
 }
-
-type NodesFirewallRulesGetRulesResponse []NodesFirewallRulesGetRulesResponseItem
 
 // List rules.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/firewall/rules

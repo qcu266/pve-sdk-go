@@ -11,11 +11,11 @@ type NodesHardwarePciPciindexRequest struct {
 	Pciid string `query:"pciid,omitempty"` //
 }
 
+type NodesHardwarePciPciindexResponse []NodesHardwarePciPciindexResponseItem
+
 type NodesHardwarePciPciindexResponseItem struct {
 	Method string `json:"method,omitempty"` //
 }
-
-type NodesHardwarePciPciindexResponse []NodesHardwarePciPciindexResponseItem
 
 // Index of available pci methods
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/hardware/pci/{pciid}

@@ -12,8 +12,6 @@ type AccessOpenidLoginLoginRequest struct {
 	State       string `json:"state,omitempty"`        // OpenId state.
 }
 
-type AccessOpenidLoginLoginResponseCap interface{}
-
 type AccessOpenidLoginLoginResponse struct {
 	CSRFPreventionToken string                            `json:"CSRFPreventionToken,omitempty"` //
 	Cap                 AccessOpenidLoginLoginResponseCap `json:"cap,omitempty"`                 //
@@ -21,6 +19,8 @@ type AccessOpenidLoginLoginResponse struct {
 	Ticket              string                            `json:"ticket,omitempty"`              //
 	Username            string                            `json:"username,omitempty"`            //
 }
+
+type AccessOpenidLoginLoginResponseCap interface{}
 
 //	Verify OpenID authorization code and create a ticket.
 //

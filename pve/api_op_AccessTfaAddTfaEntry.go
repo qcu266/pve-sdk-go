@@ -16,14 +16,14 @@ type AccessTfaAddTfaEntryRequest struct {
 	Value       *string `json:"value,omitempty"`       // The current value for the provided totp URI, or a Webauthn/U2F challenge response
 }
 
-// A recovery entry.
-type AccessTfaAddTfaEntryResponseRecoveryItem string
-
 type AccessTfaAddTfaEntryResponse struct {
 	Challenge *string                                     `json:"challenge,omitempty"` // When adding u2f entries, this contains a challenge the user must respond to in order to finish the registration.
 	Id        string                                      `json:"id,omitempty"`        // The id of a newly added TFA entry.
 	Recovery  *[]AccessTfaAddTfaEntryResponseRecoveryItem `json:"recovery,omitempty"`  // When adding recovery codes, this contains the list of codes to be displayed to the user
 }
+
+// A recovery entry.
+type AccessTfaAddTfaEntryResponseRecoveryItem string
 
 // Add a TFA entry for a user.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/tfa/{userid}

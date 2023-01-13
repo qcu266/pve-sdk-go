@@ -10,14 +10,14 @@ type ClusterFirewallRefsRefsRequest struct {
 	Type *string `query:"type,omitempty"` // Only list references of specified type.
 }
 
+type ClusterFirewallRefsRefsResponse []ClusterFirewallRefsRefsResponseItem
+
 type ClusterFirewallRefsRefsResponseItem struct {
 	Comment *string `json:"comment,omitempty"` //
 	Name    string  `json:"name,omitempty"`    //
 	Ref     string  `json:"ref,omitempty"`     //
 	Type    string  `json:"type,omitempty"`    //
 }
-
-type ClusterFirewallRefsRefsResponse []ClusterFirewallRefsRefsResponseItem
 
 // Lists possible IPSet/Alias reference which are allowed in source/dest properties.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall/refs

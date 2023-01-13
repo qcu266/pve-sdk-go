@@ -10,10 +10,10 @@ type NodesCapabilitiesQemuQemuCapsIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCapabilitiesQemuQemuCapsIndexResponse []NodesCapabilitiesQemuQemuCapsIndexResponseItem
+
 type NodesCapabilitiesQemuQemuCapsIndexResponseItem struct {
 }
-
-type NodesCapabilitiesQemuQemuCapsIndexResponse []NodesCapabilitiesQemuQemuCapsIndexResponseItem
 
 // QEMU capabilities index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/capabilities/qemu

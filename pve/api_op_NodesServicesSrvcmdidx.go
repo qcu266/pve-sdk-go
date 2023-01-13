@@ -11,11 +11,11 @@ type NodesServicesSrvcmdidxRequest struct {
 	Service string `query:"service,omitempty"` // Service ID
 }
 
+type NodesServicesSrvcmdidxResponse []NodesServicesSrvcmdidxResponseItem
+
 type NodesServicesSrvcmdidxResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` //
 }
-
-type NodesServicesSrvcmdidxResponse []NodesServicesSrvcmdidxResponseItem
 
 // Directory index
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/services/{service}

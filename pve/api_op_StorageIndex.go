@@ -10,11 +10,11 @@ type StorageIndexRequest struct {
 	Type *string `query:"type,omitempty"` // Only list storage of specific type
 }
 
+type StorageIndexResponse []StorageIndexResponseItem
+
 type StorageIndexResponseItem struct {
 	Storage string `json:"storage,omitempty"` //
 }
-
-type StorageIndexResponse []StorageIndexResponseItem
 
 // Storage index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/storage

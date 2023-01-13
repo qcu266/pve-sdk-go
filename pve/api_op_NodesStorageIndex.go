@@ -15,6 +15,8 @@ type NodesStorageIndexRequest struct {
 	Target  *string `query:"target,omitempty"`  // If target is different to 'node', we only lists shared storages which content is accessible on this 'node' and the specified 'target' node.
 }
 
+type NodesStorageIndexResponse []NodesStorageIndexResponseItem
+
 type NodesStorageIndexResponseItem struct {
 	Active       *bool    `json:"active,omitempty"`        // Set when storage is accessible.
 	Avail        *int64   `json:"avail,omitempty"`         // Available storage space in bytes.
@@ -27,8 +29,6 @@ type NodesStorageIndexResponseItem struct {
 	Used         *int64   `json:"used,omitempty"`          // Used storage space in bytes.
 	UsedFraction *float64 `json:"used_fraction,omitempty"` // Used fraction (used/total).
 }
-
-type NodesStorageIndexResponse []NodesStorageIndexResponseItem
 
 // Get status for all datastores.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/storage

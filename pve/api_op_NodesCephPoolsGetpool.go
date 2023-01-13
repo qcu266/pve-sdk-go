@@ -12,10 +12,6 @@ type NodesCephPoolsGetpoolRequest struct {
 	Verbose *bool  `query:"verbose,omitempty"` // If enabled, will display additional data(eg. statistics).
 }
 
-type NodesCephPoolsGetpoolResponseStatistics interface{}
-
-type NodesCephPoolsGetpoolResponseAutoscaleStatus interface{}
-
 type NodesCephPoolsGetpoolResponse struct {
 	Application          *string                                       `json:"application,omitempty"`            // The application of the pool.
 	ApplicationList      *[]interface{}                                `json:"application_list,omitempty"`       //
@@ -42,6 +38,10 @@ type NodesCephPoolsGetpoolResponse struct {
 	UseGmtHitset         bool                                          `json:"use_gmt_hitset,omitempty"`         //
 	WriteFadviseDontneed bool                                          `json:"write_fadvise_dontneed,omitempty"` //
 }
+
+type NodesCephPoolsGetpoolResponseAutoscaleStatus interface{}
+
+type NodesCephPoolsGetpoolResponseStatistics interface{}
 
 // List pool settings.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph/pools/{name}

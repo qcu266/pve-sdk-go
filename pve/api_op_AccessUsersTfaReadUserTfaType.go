@@ -11,14 +11,14 @@ type AccessUsersTfaReadUserTfaTypeRequest struct {
 	Userid   string `query:"userid,omitempty"`   // User ID
 }
 
-// A TFA type.
-type AccessUsersTfaReadUserTfaTypeResponseTypesItem string
-
 type AccessUsersTfaReadUserTfaTypeResponse struct {
 	Realm *string                                           `json:"realm,omitempty"` // The type of TFA the users realm has set, if any.
 	Types *[]AccessUsersTfaReadUserTfaTypeResponseTypesItem `json:"types,omitempty"` // Array of the user configured TFA types, if any. Only available if 'multiple' was not passed.
 	User  *string                                           `json:"user,omitempty"`  // The type of TFA the user has set, if any. Only set if 'multiple' was not passed.
 }
+
+// A TFA type.
+type AccessUsersTfaReadUserTfaTypeResponseTypesItem string
 
 // Get user TFA types (Personal and Realm).
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/users/{userid}/tfa

@@ -15,12 +15,12 @@ type NodesScanPbsPbsscanRequest struct {
 	Username    string  `query:"username,omitempty"`    // User-name or API token-ID.
 }
 
+type NodesScanPbsPbsscanResponse []NodesScanPbsPbsscanResponseItem
+
 type NodesScanPbsPbsscanResponseItem struct {
 	Comment *string `json:"comment,omitempty"` // Comment from server.
 	Store   string  `json:"store,omitempty"`   // The datastore name.
 }
-
-type NodesScanPbsPbsscanResponse []NodesScanPbsPbsscanResponseItem
 
 // Scan remote Proxmox Backup Server.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan/pbs

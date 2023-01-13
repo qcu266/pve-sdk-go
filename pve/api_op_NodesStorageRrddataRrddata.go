@@ -13,10 +13,10 @@ type NodesStorageRrddataRrddataRequest struct {
 	Timeframe string  `query:"timeframe,omitempty"` // Specify the time frame you are interested in.
 }
 
+type NodesStorageRrddataRrddataResponse []NodesStorageRrddataRrddataResponseItem
+
 type NodesStorageRrddataRrddataResponseItem struct {
 }
-
-type NodesStorageRrddataRrddataResponse []NodesStorageRrddataRrddataResponseItem
 
 // Read storage RRD statistics.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/storage/{storage}/rrddata

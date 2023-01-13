@@ -14,12 +14,12 @@ type NodesScanCifsCifsscanRequest struct {
 	Username *string `query:"username,omitempty"` // User name.
 }
 
+type NodesScanCifsCifsscanResponse []NodesScanCifsCifsscanResponseItem
+
 type NodesScanCifsCifsscanResponseItem struct {
 	Description string `json:"description,omitempty"` // Descriptive text from server.
 	Share       string `json:"share,omitempty"`       // The cifs share name.
 }
-
-type NodesScanCifsCifsscanResponse []NodesScanCifsCifsscanResponseItem
 
 // Scan remote CIFS server.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan/cifs

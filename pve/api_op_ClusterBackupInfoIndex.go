@@ -8,12 +8,12 @@ import (
 
 type ClusterBackupInfoIndexRequest interface{}
 
+// Directory index.
+type ClusterBackupInfoIndexResponse []ClusterBackupInfoIndexResponseItem
+
 type ClusterBackupInfoIndexResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` // API sub-directory endpoint
 }
-
-// Directory index.
-type ClusterBackupInfoIndexResponse []ClusterBackupInfoIndexResponseItem
 
 // Index for backup info related endpoints
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/backup-info

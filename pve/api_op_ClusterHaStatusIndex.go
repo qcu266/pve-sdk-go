@@ -8,10 +8,10 @@ import (
 
 type ClusterHaStatusIndexRequest interface{}
 
+type ClusterHaStatusIndexResponse []ClusterHaStatusIndexResponseItem
+
 type ClusterHaStatusIndexResponseItem struct {
 }
-
-type ClusterHaStatusIndexResponse []ClusterHaStatusIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/ha/status

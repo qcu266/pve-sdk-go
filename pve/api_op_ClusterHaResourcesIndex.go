@@ -10,11 +10,11 @@ type ClusterHaResourcesIndexRequest struct {
 	Type *string `query:"type,omitempty"` // Only list resources of specific type
 }
 
+type ClusterHaResourcesIndexResponse []ClusterHaResourcesIndexResponseItem
+
 type ClusterHaResourcesIndexResponseItem struct {
 	Sid string `json:"sid,omitempty"` //
 }
-
-type ClusterHaResourcesIndexResponse []ClusterHaResourcesIndexResponseItem
 
 // List HA resources.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/ha/resources

@@ -13,6 +13,8 @@ type NodesStorageFileRestoreListListRequest struct {
 	Volume   string `query:"volume,omitempty"`   // Backup volume ID or name. Currently only PBS snapshots are supported.
 }
 
+type NodesStorageFileRestoreListListResponse []NodesStorageFileRestoreListListResponseItem
+
 type NodesStorageFileRestoreListListResponseItem struct {
 	Filepath string `json:"filepath,omitempty"` // base64 path of the current entry
 	Leaf     bool   `json:"leaf,omitempty"`     // If this entry is a leaf in the directory graph.
@@ -21,8 +23,6 @@ type NodesStorageFileRestoreListListResponseItem struct {
 	Text     string `json:"text,omitempty"`     // Entry display text.
 	Type     string `json:"type,omitempty"`     // Entry type.
 }
-
-type NodesStorageFileRestoreListListResponse []NodesStorageFileRestoreListListResponseItem
 
 // List files and directories for single file restore under the given path.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/storage/{storage}/file-restore/list

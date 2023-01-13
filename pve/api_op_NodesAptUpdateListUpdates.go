@@ -10,10 +10,10 @@ type NodesAptUpdateListUpdatesRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesAptUpdateListUpdatesResponse []NodesAptUpdateListUpdatesResponseItem
+
 type NodesAptUpdateListUpdatesResponseItem struct {
 }
-
-type NodesAptUpdateListUpdatesResponse []NodesAptUpdateListUpdatesResponseItem
 
 // List available updates.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/apt/update

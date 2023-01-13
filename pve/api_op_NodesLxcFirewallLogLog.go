@@ -13,12 +13,12 @@ type NodesLxcFirewallLogLogRequest struct {
 	Vmid  int64  `query:"vmid,omitempty"`  // The (unique) ID of the VM.
 }
 
+type NodesLxcFirewallLogLogResponse []NodesLxcFirewallLogLogResponseItem
+
 type NodesLxcFirewallLogLogResponseItem struct {
 	N int64  `json:"n,omitempty"` // Line number
 	T string `json:"t,omitempty"` // Line text
 }
-
-type NodesLxcFirewallLogLogResponse []NodesLxcFirewallLogLogResponseItem
 
 // Read firewall log
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}/firewall/log

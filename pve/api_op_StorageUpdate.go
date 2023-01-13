@@ -56,15 +56,15 @@ type StorageUpdateRequest struct {
 	Username             *string `json:"username,omitempty"`              // RBD Id.
 }
 
-// Partial, possible server generated, configuration properties.
-type StorageUpdateResponseConfig struct {
-	EncryptionKey *string `json:"encryption-key,omitempty"` // The, possible auto-generated, encryption-key.
-}
-
 type StorageUpdateResponse struct {
 	Config  *StorageUpdateResponseConfig `json:"config,omitempty"`  // Partial, possible server generated, configuration properties.
 	Storage string                       `json:"storage,omitempty"` // The ID of the created storage.
 	Type    string                       `json:"type,omitempty"`    // The type of the created storage.
+}
+
+// Partial, possible server generated, configuration properties.
+type StorageUpdateResponseConfig struct {
+	EncryptionKey *string `json:"encryption-key,omitempty"` // The, possible auto-generated, encryption-key.
 }
 
 // Update storage configuration.

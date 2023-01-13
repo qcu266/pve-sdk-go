@@ -8,11 +8,11 @@ import (
 
 type AccessOpenidIndexRequest interface{}
 
+type AccessOpenidIndexResponse []AccessOpenidIndexResponseItem
+
 type AccessOpenidIndexResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` //
 }
-
-type AccessOpenidIndexResponse []AccessOpenidIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/openid

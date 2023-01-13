@@ -10,6 +10,8 @@ type NodesLxcVmlistRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesLxcVmlistResponse []NodesLxcVmlistResponseItem
+
 type NodesLxcVmlistResponseItem struct {
 	Cpus    *float64 `json:"cpus,omitempty"`    // Maximum usable CPUs.
 	Lock    *string  `json:"lock,omitempty"`    // The current config lock, if any.
@@ -22,8 +24,6 @@ type NodesLxcVmlistResponseItem struct {
 	Uptime  *int64   `json:"uptime,omitempty"`  // Uptime.
 	Vmid    int64    `json:"vmid,omitempty"`    // The (unique) ID of the VM.
 }
-
-type NodesLxcVmlistResponse []NodesLxcVmlistResponseItem
 
 // LXC container index (per node).
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc

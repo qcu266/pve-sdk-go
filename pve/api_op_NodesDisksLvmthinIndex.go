@@ -10,6 +10,8 @@ type NodesDisksLvmthinIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesDisksLvmthinIndexResponse []NodesDisksLvmthinIndexResponseItem
+
 type NodesDisksLvmthinIndexResponseItem struct {
 	Lv           string `json:"lv,omitempty"`            // The name of the thinpool.
 	LvSize       int64  `json:"lv_size,omitempty"`       // The size of the thinpool in bytes.
@@ -18,8 +20,6 @@ type NodesDisksLvmthinIndexResponseItem struct {
 	Used         int64  `json:"used,omitempty"`          // The used bytes of the thinpool.
 	Vg           string `json:"vg,omitempty"`            // The associated volume group.
 }
-
-type NodesDisksLvmthinIndexResponse []NodesDisksLvmthinIndexResponseItem
 
 // List LVM thinpools
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/disks/lvmthin

@@ -10,13 +10,13 @@ type NodesCephMonListmonRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCephMonListmonResponse []NodesCephMonListmonResponseItem
+
 type NodesCephMonListmonResponseItem struct {
 	Addr *string `json:"addr,omitempty"` //
 	Host *string `json:"host,omitempty"` //
 	Name string  `json:"name,omitempty"` //
 }
-
-type NodesCephMonListmonResponse []NodesCephMonListmonResponseItem
 
 // Get Ceph monitor list.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph/mon

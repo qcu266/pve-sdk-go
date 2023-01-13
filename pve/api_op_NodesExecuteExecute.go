@@ -11,10 +11,10 @@ type NodesExecuteExecuteRequest struct {
 	Node     string `json:"node,omitempty"`     // The cluster node name.
 }
 
+type NodesExecuteExecuteResponse []NodesExecuteExecuteResponseItem
+
 type NodesExecuteExecuteResponseItem struct {
 }
-
-type NodesExecuteExecuteResponse []NodesExecuteExecuteResponseItem
 
 // Execute multiple commands in order.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/execute

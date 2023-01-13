@@ -11,14 +11,14 @@ type NodesQemuPendingVmPendingRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesQemuPendingVmPendingResponse []NodesQemuPendingVmPendingResponseItem
+
 type NodesQemuPendingVmPendingResponseItem struct {
 	Delete  *int64  `json:"delete,omitempty"`  // Indicates a pending delete request if present and not 0. The value 2 indicates a force-delete request.
 	Key     string  `json:"key,omitempty"`     // Configuration option name.
 	Pending *string `json:"pending,omitempty"` // Pending value.
 	Value   *string `json:"value,omitempty"`   // Current value.
 }
-
-type NodesQemuPendingVmPendingResponse []NodesQemuPendingVmPendingResponseItem
 
 // Get the virtual machine configuration with both current and pending values.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/pending

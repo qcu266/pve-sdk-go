@@ -67,15 +67,15 @@ type StorageCreateRequest struct {
 	Volume               *string `json:"volume,omitempty"`                // Glusterfs Volume.
 }
 
-// Partial, possible server generated, configuration properties.
-type StorageCreateResponseConfig struct {
-	EncryptionKey *string `json:"encryption-key,omitempty"` // The, possible auto-generated, encryption-key.
-}
-
 type StorageCreateResponse struct {
 	Config  *StorageCreateResponseConfig `json:"config,omitempty"`  // Partial, possible server generated, configuration properties.
 	Storage string                       `json:"storage,omitempty"` // The ID of the created storage.
 	Type    string                       `json:"type,omitempty"`    // The type of the created storage.
+}
+
+// Partial, possible server generated, configuration properties.
+type StorageCreateResponseConfig struct {
+	EncryptionKey *string `json:"encryption-key,omitempty"` // The, possible auto-generated, encryption-key.
 }
 
 // Create a new storage.

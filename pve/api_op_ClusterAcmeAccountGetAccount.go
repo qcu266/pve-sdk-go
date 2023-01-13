@@ -10,14 +10,14 @@ type ClusterAcmeAccountGetAccountRequest struct {
 	Name *string `query:"name,omitempty"` // ACME account config file name.
 }
 
-type ClusterAcmeAccountGetAccountResponseAccount interface{}
-
 type ClusterAcmeAccountGetAccountResponse struct {
 	Account   *ClusterAcmeAccountGetAccountResponseAccount `json:"account,omitempty"`   //
 	Directory *string                                      `json:"directory,omitempty"` // URL of ACME CA directory endpoint.
 	Location  *string                                      `json:"location,omitempty"`  //
 	Tos       *string                                      `json:"tos,omitempty"`       //
 }
+
+type ClusterAcmeAccountGetAccountResponseAccount interface{}
 
 // Return existing ACME account information.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/acme/account/{name}

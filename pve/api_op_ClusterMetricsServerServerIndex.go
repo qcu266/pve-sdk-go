@@ -8,6 +8,8 @@ import (
 
 type ClusterMetricsServerServerIndexRequest interface{}
 
+type ClusterMetricsServerServerIndexResponse []ClusterMetricsServerServerIndexResponseItem
+
 type ClusterMetricsServerServerIndexResponseItem struct {
 	Disable bool   `json:"disable,omitempty"` // Flag to disable the plugin.
 	Id      string `json:"id,omitempty"`      // The ID of the entry.
@@ -15,8 +17,6 @@ type ClusterMetricsServerServerIndexResponseItem struct {
 	Server  string `json:"server,omitempty"`  // Server dns name or IP address
 	Type    string `json:"type,omitempty"`    // Plugin type.
 }
-
-type ClusterMetricsServerServerIndexResponse []ClusterMetricsServerServerIndexResponseItem
 
 // List configured metric servers.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/metrics/server

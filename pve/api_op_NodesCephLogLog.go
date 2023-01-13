@@ -12,12 +12,12 @@ type NodesCephLogLogRequest struct {
 	Start *int64 `query:"start,omitempty"` //
 }
 
+type NodesCephLogLogResponse []NodesCephLogLogResponseItem
+
 type NodesCephLogLogResponseItem struct {
 	N int64  `json:"n,omitempty"` // Line number
 	T string `json:"t,omitempty"` // Line text
 }
-
-type NodesCephLogLogResponse []NodesCephLogLogResponseItem
 
 // Read ceph log
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph/log

@@ -11,14 +11,14 @@ type NodesLxcPendingVmPendingRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesLxcPendingVmPendingResponse []NodesLxcPendingVmPendingResponseItem
+
 type NodesLxcPendingVmPendingResponseItem struct {
 	Delete  *int64  `json:"delete,omitempty"`  // Indicates a pending delete request if present and not 0.
 	Key     string  `json:"key,omitempty"`     // Configuration option name.
 	Pending *string `json:"pending,omitempty"` // Pending value.
 	Value   *string `json:"value,omitempty"`   // Current value.
 }
-
-type NodesLxcPendingVmPendingResponse []NodesLxcPendingVmPendingResponseItem
 
 // Get container configuration, including pending changes.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}/pending

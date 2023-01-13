@@ -8,14 +8,14 @@ import (
 
 type ClusterFirewallAliasesGetAliasesRequest interface{}
 
+type ClusterFirewallAliasesGetAliasesResponse []ClusterFirewallAliasesGetAliasesResponseItem
+
 type ClusterFirewallAliasesGetAliasesResponseItem struct {
 	Cidr    string  `json:"cidr,omitempty"`    //
 	Comment *string `json:"comment,omitempty"` //
 	Digest  string  `json:"digest,omitempty"`  // Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 	Name    string  `json:"name,omitempty"`    //
 }
-
-type ClusterFirewallAliasesGetAliasesResponse []ClusterFirewallAliasesGetAliasesResponseItem
 
 // List aliases
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall/aliases

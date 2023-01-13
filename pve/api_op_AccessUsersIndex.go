@@ -11,12 +11,7 @@ type AccessUsersIndexRequest struct {
 	Full    *bool `query:"full,omitempty"`    // Include group and token information.
 }
 
-type AccessUsersIndexResponseItemTokensItem struct {
-	Comment *string `json:"comment,omitempty"` //
-	Expire  *int64  `json:"expire,omitempty"`  // API token expiration date (seconds since epoch). '0' means no expiration date.
-	Privsep *bool   `json:"privsep,omitempty"` // Restrict API token privileges with separate ACLs (default), or give full privileges of corresponding user.
-	Tokenid string  `json:"tokenid,omitempty"` // User-specific token identifier.
-}
+type AccessUsersIndexResponse []AccessUsersIndexResponseItem
 
 type AccessUsersIndexResponseItem struct {
 	Comment   *string                                   `json:"comment,omitempty"`    //
@@ -32,7 +27,12 @@ type AccessUsersIndexResponseItem struct {
 	Userid    string                                    `json:"userid,omitempty"`     // User ID
 }
 
-type AccessUsersIndexResponse []AccessUsersIndexResponseItem
+type AccessUsersIndexResponseItemTokensItem struct {
+	Comment *string `json:"comment,omitempty"` //
+	Expire  *int64  `json:"expire,omitempty"`  // API token expiration date (seconds since epoch). '0' means no expiration date.
+	Privsep *bool   `json:"privsep,omitempty"` // Restrict API token privileges with separate ACLs (default), or give full privileges of corresponding user.
+	Tokenid string  `json:"tokenid,omitempty"` // User-specific token identifier.
+}
 
 // User index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/users

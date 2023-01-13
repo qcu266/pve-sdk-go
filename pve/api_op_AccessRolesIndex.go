@@ -8,13 +8,13 @@ import (
 
 type AccessRolesIndexRequest interface{}
 
+type AccessRolesIndexResponse []AccessRolesIndexResponseItem
+
 type AccessRolesIndexResponseItem struct {
 	Privs   *string `json:"privs,omitempty"`   //
 	Roleid  string  `json:"roleid,omitempty"`  //
 	Special *bool   `json:"special,omitempty"` //
 }
-
-type AccessRolesIndexResponse []AccessRolesIndexResponseItem
 
 // Role index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/roles

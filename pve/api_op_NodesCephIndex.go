@@ -10,10 +10,10 @@ type NodesCephIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCephIndexResponse []NodesCephIndexResponseItem
+
 type NodesCephIndexResponseItem struct {
 }
-
-type NodesCephIndexResponse []NodesCephIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph

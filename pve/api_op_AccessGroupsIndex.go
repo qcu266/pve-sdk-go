@@ -8,13 +8,13 @@ import (
 
 type AccessGroupsIndexRequest interface{}
 
+type AccessGroupsIndexResponse []AccessGroupsIndexResponseItem
+
 type AccessGroupsIndexResponseItem struct {
 	Comment *string `json:"comment,omitempty"` //
 	Groupid string  `json:"groupid,omitempty"` //
 	Users   *string `json:"users,omitempty"`   // list of users which form this group
 }
-
-type AccessGroupsIndexResponse []AccessGroupsIndexResponseItem
 
 // Group index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/groups

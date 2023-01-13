@@ -8,11 +8,11 @@ import (
 
 type AccessIndexRequest interface{}
 
+type AccessIndexResponse []AccessIndexResponseItem
+
 type AccessIndexResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` //
 }
-
-type AccessIndexResponse []AccessIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access

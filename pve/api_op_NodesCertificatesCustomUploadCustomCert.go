@@ -14,8 +14,6 @@ type NodesCertificatesCustomUploadCustomCertRequest struct {
 	Restart      *bool   `json:"restart,omitempty"`      // Restart pveproxy.
 }
 
-type NodesCertificatesCustomUploadCustomCertResponseSanItem string
-
 type NodesCertificatesCustomUploadCustomCertResponse struct {
 	Filename      *string                                                   `json:"filename,omitempty"`        //
 	Fingerprint   *string                                                   `json:"fingerprint,omitempty"`     // Certificate SHA 256 fingerprint.
@@ -28,6 +26,8 @@ type NodesCertificatesCustomUploadCustomCertResponse struct {
 	San           *[]NodesCertificatesCustomUploadCustomCertResponseSanItem `json:"san,omitempty"`             // List of Certificate's SubjectAlternativeName entries.
 	Subject       *string                                                   `json:"subject,omitempty"`         // Certificate subject name.
 }
+
+type NodesCertificatesCustomUploadCustomCertResponseSanItem string
 
 // Upload or update custom certificate chain and key.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/certificates/custom

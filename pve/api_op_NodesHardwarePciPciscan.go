@@ -12,6 +12,8 @@ type NodesHardwarePciPciscanRequest struct {
 	Verbose           *bool   `query:"verbose,omitempty"`             // If disabled, does only print the PCI IDs. Otherwise, additional information like vendor and device will be returned.
 }
 
+type NodesHardwarePciPciscanResponse []NodesHardwarePciPciscanResponseItem
+
 type NodesHardwarePciPciscanResponseItem struct {
 	Class               string  `json:"class,omitempty"`                 // The PCI Class of the device.
 	Device              string  `json:"device,omitempty"`                // The Device ID.
@@ -26,8 +28,6 @@ type NodesHardwarePciPciscanResponseItem struct {
 	Vendor              string  `json:"vendor,omitempty"`                // The Vendor ID.
 	VendorName          *string `json:"vendor_name,omitempty"`           //
 }
-
-type NodesHardwarePciPciscanResponse []NodesHardwarePciPciscanResponseItem
 
 // List local PCI devices.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/hardware/pci

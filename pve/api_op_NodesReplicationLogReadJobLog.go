@@ -13,12 +13,12 @@ type NodesReplicationLogReadJobLogRequest struct {
 	Start *int64 `query:"start,omitempty"` //
 }
 
+type NodesReplicationLogReadJobLogResponse []NodesReplicationLogReadJobLogResponseItem
+
 type NodesReplicationLogReadJobLogResponseItem struct {
 	N int64  `json:"n,omitempty"` // Line number
 	T string `json:"t,omitempty"` // Line text
 }
-
-type NodesReplicationLogReadJobLogResponse []NodesReplicationLogReadJobLogResponseItem
 
 // Read replication job log.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/replication/{id}/log

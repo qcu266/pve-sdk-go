@@ -10,11 +10,11 @@ type NodesScanIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesScanIndexResponse []NodesScanIndexResponseItem
+
 type NodesScanIndexResponseItem struct {
 	Method string `json:"method,omitempty"` //
 }
-
-type NodesScanIndexResponse []NodesScanIndexResponseItem
 
 // Index of available scan methods
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan

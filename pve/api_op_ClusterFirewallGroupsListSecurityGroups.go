@@ -8,13 +8,13 @@ import (
 
 type ClusterFirewallGroupsListSecurityGroupsRequest interface{}
 
+type ClusterFirewallGroupsListSecurityGroupsResponse []ClusterFirewallGroupsListSecurityGroupsResponseItem
+
 type ClusterFirewallGroupsListSecurityGroupsResponseItem struct {
 	Comment *string `json:"comment,omitempty"` //
 	Digest  string  `json:"digest,omitempty"`  // Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 	Group   string  `json:"group,omitempty"`   // Security Group name.
 }
-
-type ClusterFirewallGroupsListSecurityGroupsResponse []ClusterFirewallGroupsListSecurityGroupsResponseItem
 
 // List security groups.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall/groups

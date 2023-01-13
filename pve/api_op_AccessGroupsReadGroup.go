@@ -10,13 +10,13 @@ type AccessGroupsReadGroupRequest struct {
 	Groupid string `query:"groupid,omitempty"` //
 }
 
-// User ID
-type AccessGroupsReadGroupResponseMembersItem string
-
 type AccessGroupsReadGroupResponse struct {
 	Comment *string                                    `json:"comment,omitempty"` //
 	Members []AccessGroupsReadGroupResponseMembersItem `json:"members,omitempty"` //
 }
+
+// User ID
+type AccessGroupsReadGroupResponseMembersItem string
 
 // Get group configuration.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/groups/{groupid}

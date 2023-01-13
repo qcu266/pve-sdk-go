@@ -11,10 +11,10 @@ type ClusterSdnVnetsIndexRequest struct {
 	Running *bool `query:"running,omitempty"` // Display running config.
 }
 
+type ClusterSdnVnetsIndexResponse []ClusterSdnVnetsIndexResponseItem
+
 type ClusterSdnVnetsIndexResponseItem struct {
 }
-
-type ClusterSdnVnetsIndexResponse []ClusterSdnVnetsIndexResponseItem
 
 // SDN vnets index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/sdn/vnets

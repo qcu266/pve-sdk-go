@@ -10,11 +10,11 @@ type NodesScanLvmLvmscanRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesScanLvmLvmscanResponse []NodesScanLvmLvmscanResponseItem
+
 type NodesScanLvmLvmscanResponseItem struct {
 	Vg string `json:"vg,omitempty"` // The LVM logical volume group name.
 }
-
-type NodesScanLvmLvmscanResponse []NodesScanLvmLvmscanResponseItem
 
 // List local LVM volume groups.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan/lvm

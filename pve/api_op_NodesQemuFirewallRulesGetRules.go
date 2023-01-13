@@ -11,11 +11,11 @@ type NodesQemuFirewallRulesGetRulesRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesQemuFirewallRulesGetRulesResponse []NodesQemuFirewallRulesGetRulesResponseItem
+
 type NodesQemuFirewallRulesGetRulesResponseItem struct {
 	Pos int64 `json:"pos,omitempty"` //
 }
-
-type NodesQemuFirewallRulesGetRulesResponse []NodesQemuFirewallRulesGetRulesResponseItem
 
 // List rules.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/firewall/rules

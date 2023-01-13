@@ -13,12 +13,12 @@ type NodesTasksLogReadTaskLogRequest struct {
 	Upid  string `query:"upid,omitempty"`  // The task's unique ID.
 }
 
+type NodesTasksLogReadTaskLogResponse []NodesTasksLogReadTaskLogResponseItem
+
 type NodesTasksLogReadTaskLogResponseItem struct {
 	N int64  `json:"n,omitempty"` // Line number
 	T string `json:"t,omitempty"` // Line text
 }
-
-type NodesTasksLogReadTaskLogResponse []NodesTasksLogReadTaskLogResponseItem
 
 // Read task log.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/tasks/{upid}/log

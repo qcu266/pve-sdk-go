@@ -14,6 +14,8 @@ type NodesStoragePrunebackupsDryrunRequest struct {
 	Vmid         *int64  `query:"vmid,omitempty"`          // Only consider backups for this guest.
 }
 
+type NodesStoragePrunebackupsDryrunResponse []NodesStoragePrunebackupsDryrunResponseItem
+
 type NodesStoragePrunebackupsDryrunResponseItem struct {
 	Ctime int64  `json:"ctime,omitempty"` // Creation time of the backup (seconds since the UNIX epoch).
 	Mark  string `json:"mark,omitempty"`  // Whether the backup would be kept or removed. Backups that are protected or don't use the standard naming scheme are not removed.
@@ -21,8 +23,6 @@ type NodesStoragePrunebackupsDryrunResponseItem struct {
 	Vmid  *int64 `json:"vmid,omitempty"`  // The VM the backup belongs to.
 	Volid string `json:"volid,omitempty"` // Backup volume ID.
 }
-
-type NodesStoragePrunebackupsDryrunResponse []NodesStoragePrunebackupsDryrunResponseItem
 
 // Get prune information for backups. NOTE: this is only a preview and might not be what a subsequent prune call does if backups are removed/added in the meantime.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/storage/{storage}/prunebackups

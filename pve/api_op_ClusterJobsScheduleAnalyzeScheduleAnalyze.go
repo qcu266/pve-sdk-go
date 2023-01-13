@@ -12,13 +12,13 @@ type ClusterJobsScheduleAnalyzeScheduleAnalyzeRequest struct {
 	Starttime  *int64 `query:"starttime,omitempty"`  // UNIX timestamp to start the calculation from. Defaults to the current time.
 }
 
+// An array of the next <iterations> events since <starttime>.
+type ClusterJobsScheduleAnalyzeScheduleAnalyzeResponse []ClusterJobsScheduleAnalyzeScheduleAnalyzeResponseItem
+
 type ClusterJobsScheduleAnalyzeScheduleAnalyzeResponseItem struct {
 	Timestamp int64  `json:"timestamp,omitempty"` // UNIX timestamp for the run.
 	Utc       string `json:"utc,omitempty"`       // UTC timestamp for the run.
 }
-
-// An array of the next <iterations> events since <starttime>.
-type ClusterJobsScheduleAnalyzeScheduleAnalyzeResponse []ClusterJobsScheduleAnalyzeScheduleAnalyzeResponseItem
 
 // Returns a list of future schedule runtimes.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/jobs/schedule-analyze

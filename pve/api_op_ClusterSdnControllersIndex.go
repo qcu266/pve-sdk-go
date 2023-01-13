@@ -12,14 +12,14 @@ type ClusterSdnControllersIndexRequest struct {
 	Type    *string `query:"type,omitempty"`    // Only list sdn controllers of specific type
 }
 
+type ClusterSdnControllersIndexResponse []ClusterSdnControllersIndexResponseItem
+
 type ClusterSdnControllersIndexResponseItem struct {
 	Controller string  `json:"controller,omitempty"` //
 	Pending    *string `json:"pending,omitempty"`    //
 	State      *string `json:"state,omitempty"`      //
 	Type       string  `json:"type,omitempty"`       //
 }
-
-type ClusterSdnControllersIndexResponse []ClusterSdnControllersIndexResponseItem
 
 // SDN controllers index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/sdn/controllers

@@ -10,11 +10,11 @@ type ClusterFirewallGroupsGetRulesRequest struct {
 	Group string `query:"group,omitempty"` // Security Group name.
 }
 
+type ClusterFirewallGroupsGetRulesResponse []ClusterFirewallGroupsGetRulesResponseItem
+
 type ClusterFirewallGroupsGetRulesResponseItem struct {
 	Pos int64 `json:"pos,omitempty"` //
 }
-
-type ClusterFirewallGroupsGetRulesResponse []ClusterFirewallGroupsGetRulesResponseItem
 
 // List rules.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall/groups/{group}

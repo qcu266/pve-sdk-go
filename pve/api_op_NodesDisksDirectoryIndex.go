@@ -10,6 +10,8 @@ type NodesDisksDirectoryIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesDisksDirectoryIndexResponse []NodesDisksDirectoryIndexResponseItem
+
 type NodesDisksDirectoryIndexResponseItem struct {
 	Device   string `json:"device,omitempty"`   // The mounted device.
 	Options  string `json:"options,omitempty"`  // The mount options.
@@ -17,8 +19,6 @@ type NodesDisksDirectoryIndexResponseItem struct {
 	Type     string `json:"type,omitempty"`     // The filesystem type.
 	Unitfile string `json:"unitfile,omitempty"` // The path of the mount unit.
 }
-
-type NodesDisksDirectoryIndexResponse []NodesDisksDirectoryIndexResponseItem
 
 // PVE Managed Directory storages.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/disks/directory

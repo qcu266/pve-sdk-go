@@ -10,10 +10,10 @@ type NodesAptVersionsVersionsRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesAptVersionsVersionsResponse []NodesAptVersionsVersionsResponseItem
+
 type NodesAptVersionsVersionsResponseItem struct {
 }
-
-type NodesAptVersionsVersionsResponse []NodesAptVersionsVersionsResponseItem
 
 // Get package information for important Proxmox packages.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/apt/versions

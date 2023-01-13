@@ -11,9 +11,6 @@ type NodesLxcStatusCurrentVmStatusRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
-// HA manager service status.
-type NodesLxcStatusCurrentVmStatusResponseHa interface{}
-
 type NodesLxcStatusCurrentVmStatusResponse struct {
 	Cpus    *float64                                `json:"cpus,omitempty"`    // Maximum usable CPUs.
 	Ha      NodesLxcStatusCurrentVmStatusResponseHa `json:"ha,omitempty"`      // HA manager service status.
@@ -27,6 +24,9 @@ type NodesLxcStatusCurrentVmStatusResponse struct {
 	Uptime  *int64                                  `json:"uptime,omitempty"`  // Uptime.
 	Vmid    int64                                   `json:"vmid,omitempty"`    // The (unique) ID of the VM.
 }
+
+// HA manager service status.
+type NodesLxcStatusCurrentVmStatusResponseHa interface{}
 
 // Get virtual machine status.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}/status/current

@@ -10,13 +10,13 @@ type NodesCapabilitiesQemuCpuIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCapabilitiesQemuCpuIndexResponse []NodesCapabilitiesQemuCpuIndexResponseItem
+
 type NodesCapabilitiesQemuCpuIndexResponseItem struct {
 	Custom bool   `json:"custom,omitempty"` // True if this is a custom CPU model.
 	Name   string `json:"name,omitempty"`   // Name of the CPU model. Identifies it for subsequent API calls. Prefixed with 'custom-' for custom models.
 	Vendor string `json:"vendor,omitempty"` // CPU vendor visible to the guest when this model is selected. Vendor of 'reported-model' in case of custom models.
 }
-
-type NodesCapabilitiesQemuCpuIndexResponse []NodesCapabilitiesQemuCpuIndexResponseItem
 
 // List all custom and default CPU models.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/capabilities/qemu/cpu

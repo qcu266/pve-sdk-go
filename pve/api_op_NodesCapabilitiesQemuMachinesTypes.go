@@ -10,13 +10,13 @@ type NodesCapabilitiesQemuMachinesTypesRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCapabilitiesQemuMachinesTypesResponse []NodesCapabilitiesQemuMachinesTypesResponseItem
+
 type NodesCapabilitiesQemuMachinesTypesResponseItem struct {
 	Id      string `json:"id,omitempty"`      // Full name of machine type and version.
 	Type    string `json:"type,omitempty"`    // The machine type.
 	Version string `json:"version,omitempty"` // The machine version.
 }
-
-type NodesCapabilitiesQemuMachinesTypesResponse []NodesCapabilitiesQemuMachinesTypesResponseItem
 
 // Get available QEMU/KVM machine types.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/capabilities/qemu/machines

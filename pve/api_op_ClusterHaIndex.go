@@ -8,11 +8,11 @@ import (
 
 type ClusterHaIndexRequest interface{}
 
+type ClusterHaIndexResponse []ClusterHaIndexResponseItem
+
 type ClusterHaIndexResponseItem struct {
 	Id string `json:"id,omitempty"` //
 }
-
-type ClusterHaIndexResponse []ClusterHaIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/ha

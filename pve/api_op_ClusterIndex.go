@@ -8,10 +8,10 @@ import (
 
 type ClusterIndexRequest interface{}
 
+type ClusterIndexResponse []ClusterIndexResponseItem
+
 type ClusterIndexResponseItem struct {
 }
-
-type ClusterIndexResponse []ClusterIndexResponseItem
 
 // Cluster index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster

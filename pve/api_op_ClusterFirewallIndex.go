@@ -8,10 +8,10 @@ import (
 
 type ClusterFirewallIndexRequest interface{}
 
+type ClusterFirewallIndexResponse []ClusterFirewallIndexResponseItem
+
 type ClusterFirewallIndexResponseItem struct {
 }
-
-type ClusterFirewallIndexResponse []ClusterFirewallIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall

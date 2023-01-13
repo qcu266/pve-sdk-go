@@ -11,11 +11,11 @@ type NodesLxcFirewallRulesGetRulesRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesLxcFirewallRulesGetRulesResponse []NodesLxcFirewallRulesGetRulesResponseItem
+
 type NodesLxcFirewallRulesGetRulesResponseItem struct {
 	Pos int64 `json:"pos,omitempty"` //
 }
-
-type NodesLxcFirewallRulesGetRulesResponse []NodesLxcFirewallRulesGetRulesResponseItem
 
 // List rules.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}/firewall/rules

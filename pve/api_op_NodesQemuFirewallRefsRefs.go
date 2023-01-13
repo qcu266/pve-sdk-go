@@ -12,13 +12,13 @@ type NodesQemuFirewallRefsRefsRequest struct {
 	Vmid int64   `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesQemuFirewallRefsRefsResponse []NodesQemuFirewallRefsRefsResponseItem
+
 type NodesQemuFirewallRefsRefsResponseItem struct {
 	Comment *string `json:"comment,omitempty"` //
 	Name    string  `json:"name,omitempty"`    //
 	Type    string  `json:"type,omitempty"`    //
 }
-
-type NodesQemuFirewallRefsRefsResponse []NodesQemuFirewallRefsRefsResponseItem
 
 // Lists possible IPSet/Alias reference which are allowed in source/dest properties.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/firewall/refs

@@ -10,11 +10,9 @@ type ClusterBackupIncludedVolumesGetVolumeBackupIncludedRequest struct {
 	Id string `query:"id,omitempty"` // The job ID.
 }
 
-type ClusterBackupIncludedVolumesGetVolumeBackupIncludedResponseChildrenItemChildrenItem struct {
-	Id       string `json:"id,omitempty"`       // Configuration key of the volume.
-	Included bool   `json:"included,omitempty"` // Whether the volume is included in the backup or not.
-	Name     string `json:"name,omitempty"`     // Name of the volume.
-	Reason   string `json:"reason,omitempty"`   // The reason why the volume is included (or excluded).
+// Root node of the tree object. Children represent guests, grandchildren represent volumes of that guest.
+type ClusterBackupIncludedVolumesGetVolumeBackupIncludedResponse struct {
+	Children []ClusterBackupIncludedVolumesGetVolumeBackupIncludedResponseChildrenItem `json:"children,omitempty"` //
 }
 
 type ClusterBackupIncludedVolumesGetVolumeBackupIncludedResponseChildrenItem struct {
@@ -24,9 +22,11 @@ type ClusterBackupIncludedVolumesGetVolumeBackupIncludedResponseChildrenItem str
 	Type     string                                                                                 `json:"type,omitempty"`     // Type of the guest, VM, CT or unknown for removed but not purged guests.
 }
 
-// Root node of the tree object. Children represent guests, grandchildren represent volumes of that guest.
-type ClusterBackupIncludedVolumesGetVolumeBackupIncludedResponse struct {
-	Children []ClusterBackupIncludedVolumesGetVolumeBackupIncludedResponseChildrenItem `json:"children,omitempty"` //
+type ClusterBackupIncludedVolumesGetVolumeBackupIncludedResponseChildrenItemChildrenItem struct {
+	Id       string `json:"id,omitempty"`       // Configuration key of the volume.
+	Included bool   `json:"included,omitempty"` // Whether the volume is included in the backup or not.
+	Name     string `json:"name,omitempty"`     // Name of the volume.
+	Reason   string `json:"reason,omitempty"`   // The reason why the volume is included (or excluded).
 }
 
 // Returns included guests and the backup status of their disks. Optimized to be used in ExtJS tree views.

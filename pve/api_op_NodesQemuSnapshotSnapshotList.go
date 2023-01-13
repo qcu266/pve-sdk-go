@@ -11,6 +11,8 @@ type NodesQemuSnapshotSnapshotListRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesQemuSnapshotSnapshotListResponse []NodesQemuSnapshotSnapshotListResponseItem
+
 type NodesQemuSnapshotSnapshotListResponseItem struct {
 	Description string  `json:"description,omitempty"` // Snapshot description.
 	Name        string  `json:"name,omitempty"`        // Snapshot identifier. Value 'current' identifies the current VM.
@@ -18,8 +20,6 @@ type NodesQemuSnapshotSnapshotListResponseItem struct {
 	Snaptime    *int64  `json:"snaptime,omitempty"`    // Snapshot creation time
 	Vmstate     *bool   `json:"vmstate,omitempty"`     // Snapshot includes RAM.
 }
-
-type NodesQemuSnapshotSnapshotListResponse []NodesQemuSnapshotSnapshotListResponseItem
 
 // List all snapshots.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/snapshot

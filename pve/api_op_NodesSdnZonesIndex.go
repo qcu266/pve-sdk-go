@@ -10,12 +10,12 @@ type NodesSdnZonesIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesSdnZonesIndexResponse []NodesSdnZonesIndexResponseItem
+
 type NodesSdnZonesIndexResponseItem struct {
 	Status string `json:"status,omitempty"` // Status of zone
 	Zone   string `json:"zone,omitempty"`   // The SDN zone object identifier.
 }
-
-type NodesSdnZonesIndexResponse []NodesSdnZonesIndexResponseItem
 
 // Get status for all zones.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/sdn/zones

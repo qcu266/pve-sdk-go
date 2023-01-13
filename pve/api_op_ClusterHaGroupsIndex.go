@@ -8,11 +8,11 @@ import (
 
 type ClusterHaGroupsIndexRequest interface{}
 
+type ClusterHaGroupsIndexResponse []ClusterHaGroupsIndexResponseItem
+
 type ClusterHaGroupsIndexResponseItem struct {
 	Group string `json:"group,omitempty"` //
 }
-
-type ClusterHaGroupsIndexResponse []ClusterHaGroupsIndexResponseItem
 
 // Get HA groups.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/ha/groups

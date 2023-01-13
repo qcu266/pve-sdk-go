@@ -8,12 +8,12 @@ import (
 
 type ClusterJobsIndexRequest interface{}
 
+// Directory index.
+type ClusterJobsIndexResponse []ClusterJobsIndexResponseItem
+
 type ClusterJobsIndexResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` // API sub-directory endpoint
 }
-
-// Directory index.
-type ClusterJobsIndexResponse []ClusterJobsIndexResponseItem
 
 // Index for jobs related endpoints.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/jobs

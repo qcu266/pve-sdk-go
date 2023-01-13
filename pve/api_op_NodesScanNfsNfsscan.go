@@ -11,12 +11,12 @@ type NodesScanNfsNfsscanRequest struct {
 	Server string `query:"server,omitempty"` // The server address (name or IP).
 }
 
+type NodesScanNfsNfsscanResponse []NodesScanNfsNfsscanResponseItem
+
 type NodesScanNfsNfsscanResponseItem struct {
 	Options string `json:"options,omitempty"` // NFS export options.
 	Path    string `json:"path,omitempty"`    // The exported path.
 }
-
-type NodesScanNfsNfsscanResponse []NodesScanNfsNfsscanResponseItem
 
 // Scan remote NFS server.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan/nfs

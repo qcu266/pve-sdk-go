@@ -10,11 +10,11 @@ type NodesHardwareIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesHardwareIndexResponse []NodesHardwareIndexResponseItem
+
 type NodesHardwareIndexResponseItem struct {
 	Type string `json:"type,omitempty"` //
 }
-
-type NodesHardwareIndexResponse []NodesHardwareIndexResponseItem
 
 // Index of hardware types
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/hardware

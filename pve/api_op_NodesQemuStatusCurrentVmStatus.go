@@ -11,9 +11,6 @@ type NodesQemuStatusCurrentVmStatusRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
-// HA manager service status.
-type NodesQemuStatusCurrentVmStatusResponseHa interface{}
-
 type NodesQemuStatusCurrentVmStatusResponse struct {
 	Agent          *bool                                    `json:"agent,omitempty"`           // Qemu GuestAgent enabled in config.
 	Cpus           *float64                                 `json:"cpus,omitempty"`            // Maximum usable CPUs.
@@ -32,6 +29,9 @@ type NodesQemuStatusCurrentVmStatusResponse struct {
 	Uptime         *int64                                   `json:"uptime,omitempty"`          // Uptime.
 	Vmid           int64                                    `json:"vmid,omitempty"`            // The (unique) ID of the VM.
 }
+
+// HA manager service status.
+type NodesQemuStatusCurrentVmStatusResponseHa interface{}
 
 // Get virtual machine status.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/status/current

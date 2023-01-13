@@ -10,11 +10,11 @@ type NodesAptIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesAptIndexResponse []NodesAptIndexResponseItem
+
 type NodesAptIndexResponseItem struct {
 	Id string `json:"id,omitempty"` //
 }
-
-type NodesAptIndexResponse []NodesAptIndexResponseItem
 
 // Directory index for apt (Advanced Package Tool).
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/apt

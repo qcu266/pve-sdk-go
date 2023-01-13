@@ -10,27 +10,28 @@ type NodesAptRepositoriesRepositoriesRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+// Result from parsing the APT repository files in /etc/apt/.
+type NodesAptRepositoriesRepositoriesResponse struct {
+	Digest        string                                                      `json:"digest,omitempty"`         // Common digest of all files.
+	Errors        []NodesAptRepositoriesRepositoriesResponseErrorsItem        `json:"errors,omitempty"`         // List of problematic repository files.
+	Files         []NodesAptRepositoriesRepositoriesResponseFilesItem         `json:"files,omitempty"`          // List of parsed repository files.
+	Infos         []NodesAptRepositoriesRepositoriesResponseInfosItem         `json:"infos,omitempty"`          // Additional information/warnings for APT repositories.
+	StandardRepos []NodesAptRepositoriesRepositoriesResponseStandardReposItem `json:"standard-repos,omitempty"` // List of standard repositories and their configuration status
+}
+
 type NodesAptRepositoriesRepositoriesResponseErrorsItem struct {
 	Error string `json:"error,omitempty"` // The error message
 	Path  string `json:"path,omitempty"`  // Path to the problematic file.
 }
 
-type NodesAptRepositoriesRepositoriesResponseFilesItemDigestItem int64
-
-type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemOptionsItemValuesItem string
-
-type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemOptionsItem struct {
-	Key    string                                                                                   `json:"Key,omitempty"`    //
-	Values []NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemOptionsItemValuesItem `json:"Values,omitempty"` //
+type NodesAptRepositoriesRepositoriesResponseFilesItem struct {
+	Digest       []NodesAptRepositoriesRepositoriesResponseFilesItemDigestItem       `json:"digest,omitempty"`       // Digest of the file as bytes.
+	FileType     string                                                              `json:"file-type,omitempty"`    // Format of the file.
+	Path         string                                                              `json:"path,omitempty"`         // Path to the problematic file.
+	Repositories []NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItem `json:"repositories,omitempty"` // The parsed repositories.
 }
 
-type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemSuitesItem string
-
-type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemTypesItem string
-
-type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemURIsItem string
-
-type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemComponentsItem string
+type NodesAptRepositoriesRepositoriesResponseFilesItemDigestItem int64
 
 type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItem struct {
 	Comment    *string                                                                            `json:"Comment,omitempty"`    // Associated comment
@@ -43,12 +44,20 @@ type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItem struct {
 	URIs       []NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemURIsItem        `json:"URIs,omitempty"`       // List of repository URIs.
 }
 
-type NodesAptRepositoriesRepositoriesResponseFilesItem struct {
-	Digest       []NodesAptRepositoriesRepositoriesResponseFilesItemDigestItem       `json:"digest,omitempty"`       // Digest of the file as bytes.
-	FileType     string                                                              `json:"file-type,omitempty"`    // Format of the file.
-	Path         string                                                              `json:"path,omitempty"`         // Path to the problematic file.
-	Repositories []NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItem `json:"repositories,omitempty"` // The parsed repositories.
+type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemComponentsItem string
+
+type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemOptionsItem struct {
+	Key    string                                                                                   `json:"Key,omitempty"`    //
+	Values []NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemOptionsItemValuesItem `json:"Values,omitempty"` //
 }
+
+type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemOptionsItemValuesItem string
+
+type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemSuitesItem string
+
+type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemTypesItem string
+
+type NodesAptRepositoriesRepositoriesResponseFilesItemRepositoriesItemURIsItem string
 
 type NodesAptRepositoriesRepositoriesResponseInfosItem struct {
 	Index    string  `json:"index,omitempty"`    // Index of the associated repository within the file.
@@ -62,15 +71,6 @@ type NodesAptRepositoriesRepositoriesResponseStandardReposItem struct {
 	Handle string `json:"handle,omitempty"` // Handle to identify the repository.
 	Name   string `json:"name,omitempty"`   // Full name of the repository.
 	Status *bool  `json:"status,omitempty"` // Indicating enabled/disabled status, if the repository is configured.
-}
-
-// Result from parsing the APT repository files in /etc/apt/.
-type NodesAptRepositoriesRepositoriesResponse struct {
-	Digest        string                                                      `json:"digest,omitempty"`         // Common digest of all files.
-	Errors        []NodesAptRepositoriesRepositoriesResponseErrorsItem        `json:"errors,omitempty"`         // List of problematic repository files.
-	Files         []NodesAptRepositoriesRepositoriesResponseFilesItem         `json:"files,omitempty"`          // List of parsed repository files.
-	Infos         []NodesAptRepositoriesRepositoriesResponseInfosItem         `json:"infos,omitempty"`          // Additional information/warnings for APT repositories.
-	StandardRepos []NodesAptRepositoriesRepositoriesResponseStandardReposItem `json:"standard-repos,omitempty"` // List of standard repositories and their configuration status
 }
 
 // Get APT repository information.

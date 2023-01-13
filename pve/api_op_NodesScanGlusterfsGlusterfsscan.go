@@ -11,11 +11,11 @@ type NodesScanGlusterfsGlusterfsscanRequest struct {
 	Server string `query:"server,omitempty"` // The server address (name or IP).
 }
 
+type NodesScanGlusterfsGlusterfsscanResponse []NodesScanGlusterfsGlusterfsscanResponseItem
+
 type NodesScanGlusterfsGlusterfsscanResponseItem struct {
 	Volname string `json:"volname,omitempty"` // The volume name.
 }
-
-type NodesScanGlusterfsGlusterfsscanResponse []NodesScanGlusterfsGlusterfsscanResponseItem
 
 // Scan remote GlusterFS server.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan/glusterfs

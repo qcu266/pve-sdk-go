@@ -10,11 +10,9 @@ type NodesDisksLvmIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
-type NodesDisksLvmIndexResponseChildrenItemChildrenItem struct {
-	Free int64  `json:"free,omitempty"` // The free bytes in the physical volume
-	Leaf bool   `json:"leaf,omitempty"` //
-	Name string `json:"name,omitempty"` // The name of the physical volume
-	Size int64  `json:"size,omitempty"` // The size of the physical volume in bytes
+type NodesDisksLvmIndexResponse struct {
+	Children []NodesDisksLvmIndexResponseChildrenItem `json:"children,omitempty"` //
+	Leaf     bool                                     `json:"leaf,omitempty"`     //
 }
 
 type NodesDisksLvmIndexResponseChildrenItem struct {
@@ -25,9 +23,11 @@ type NodesDisksLvmIndexResponseChildrenItem struct {
 	Size     int64                                                 `json:"size,omitempty"`     // The size of the volume group in bytes
 }
 
-type NodesDisksLvmIndexResponse struct {
-	Children []NodesDisksLvmIndexResponseChildrenItem `json:"children,omitempty"` //
-	Leaf     bool                                     `json:"leaf,omitempty"`     //
+type NodesDisksLvmIndexResponseChildrenItemChildrenItem struct {
+	Free int64  `json:"free,omitempty"` // The free bytes in the physical volume
+	Leaf bool   `json:"leaf,omitempty"` //
+	Name string `json:"name,omitempty"` // The name of the physical volume
+	Size int64  `json:"size,omitempty"` // The size of the physical volume in bytes
 }
 
 // List LVM Volume Groups

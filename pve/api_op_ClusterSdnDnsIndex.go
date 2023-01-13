@@ -10,12 +10,12 @@ type ClusterSdnDnsIndexRequest struct {
 	Type *string `query:"type,omitempty"` // Only list sdn dns of specific type
 }
 
+type ClusterSdnDnsIndexResponse []ClusterSdnDnsIndexResponseItem
+
 type ClusterSdnDnsIndexResponseItem struct {
 	Dns  string `json:"dns,omitempty"`  //
 	Type string `json:"type,omitempty"` //
 }
-
-type ClusterSdnDnsIndexResponse []ClusterSdnDnsIndexResponseItem
 
 // SDN dns index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/sdn/dns

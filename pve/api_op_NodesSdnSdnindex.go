@@ -10,10 +10,10 @@ type NodesSdnSdnindexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesSdnSdnindexResponse []NodesSdnSdnindexResponseItem
+
 type NodesSdnSdnindexResponseItem struct {
 }
-
-type NodesSdnSdnindexResponse []NodesSdnSdnindexResponseItem
 
 // SDN index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/sdn

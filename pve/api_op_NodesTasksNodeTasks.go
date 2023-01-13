@@ -20,6 +20,8 @@ type NodesTasksNodeTasksRequest struct {
 	Vmid         *int64  `query:"vmid,omitempty"`         // Only list tasks for this VM.
 }
 
+type NodesTasksNodeTasksResponse []NodesTasksNodeTasksResponseItem
+
 type NodesTasksNodeTasksResponseItem struct {
 	Endtime   *int64  `json:"endtime,omitempty"`   //
 	Id        string  `json:"id,omitempty"`        //
@@ -32,8 +34,6 @@ type NodesTasksNodeTasksResponseItem struct {
 	Upid      string  `json:"upid,omitempty"`      //
 	User      string  `json:"user,omitempty"`      //
 }
-
-type NodesTasksNodeTasksResponse []NodesTasksNodeTasksResponseItem
 
 // Read task list for one node (finished tasks).
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/tasks

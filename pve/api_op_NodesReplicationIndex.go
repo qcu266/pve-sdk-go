@@ -11,10 +11,10 @@ type NodesReplicationIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesReplicationIndexResponse []NodesReplicationIndexResponseItem
+
 type NodesReplicationIndexResponseItem struct {
 }
-
-type NodesReplicationIndexResponse []NodesReplicationIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/replication/{id}

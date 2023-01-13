@@ -11,11 +11,11 @@ type NodesQemuAgentIndexRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
-type NodesQemuAgentIndexResponseItem struct {
-}
-
 // Returns the list of Qemu Agent commands
 type NodesQemuAgentIndexResponse []NodesQemuAgentIndexResponseItem
+
+type NodesQemuAgentIndexResponseItem struct {
+}
 
 // Qemu Agent command index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/agent

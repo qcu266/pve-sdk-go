@@ -12,13 +12,13 @@ type NodesLxcFirewallRefsRefsRequest struct {
 	Vmid int64   `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesLxcFirewallRefsRefsResponse []NodesLxcFirewallRefsRefsResponseItem
+
 type NodesLxcFirewallRefsRefsResponseItem struct {
 	Comment *string `json:"comment,omitempty"` //
 	Name    string  `json:"name,omitempty"`    //
 	Type    string  `json:"type,omitempty"`    //
 }
-
-type NodesLxcFirewallRefsRefsResponse []NodesLxcFirewallRefsRefsResponseItem
 
 // Lists possible IPSet/Alias reference which are allowed in source/dest properties.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}/firewall/refs

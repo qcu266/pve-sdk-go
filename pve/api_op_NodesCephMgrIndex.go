@@ -10,14 +10,14 @@ type NodesCephMgrIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCephMgrIndexResponse []NodesCephMgrIndexResponseItem
+
 type NodesCephMgrIndexResponseItem struct {
 	Addr  *string `json:"addr,omitempty"`  //
 	Host  *string `json:"host,omitempty"`  //
 	Name  string  `json:"name,omitempty"`  // The name (ID) for the MGR
 	State string  `json:"state,omitempty"` // State of the MGR
 }
-
-type NodesCephMgrIndexResponse []NodesCephMgrIndexResponseItem
 
 // MGR directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph/mgr

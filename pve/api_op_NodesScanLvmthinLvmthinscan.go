@@ -11,11 +11,11 @@ type NodesScanLvmthinLvmthinscanRequest struct {
 	Vg   string `query:"vg,omitempty"`   //
 }
 
+type NodesScanLvmthinLvmthinscanResponse []NodesScanLvmthinLvmthinscanResponseItem
+
 type NodesScanLvmthinLvmthinscanResponseItem struct {
 	Lv string `json:"lv,omitempty"` // The LVM Thin Pool name (LVM logical volume).
 }
-
-type NodesScanLvmthinLvmthinscanResponse []NodesScanLvmthinLvmthinscanResponseItem
 
 // List local LVM Thin Pools.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan/lvmthin

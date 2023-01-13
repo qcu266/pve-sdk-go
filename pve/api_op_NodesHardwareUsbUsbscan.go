@@ -10,6 +10,8 @@ type NodesHardwareUsbUsbscanRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesHardwareUsbUsbscanResponse []NodesHardwareUsbUsbscanResponseItem
+
 type NodesHardwareUsbUsbscanResponseItem struct {
 	Busnum       int64   `json:"busnum,omitempty"`       //
 	Class        int64   `json:"class,omitempty"`        //
@@ -24,8 +26,6 @@ type NodesHardwareUsbUsbscanResponseItem struct {
 	Usbpath      *string `json:"usbpath,omitempty"`      //
 	Vendid       string  `json:"vendid,omitempty"`       //
 }
-
-type NodesHardwareUsbUsbscanResponse []NodesHardwareUsbUsbscanResponseItem
 
 // List local USB devices.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/hardware/usb

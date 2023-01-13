@@ -11,11 +11,11 @@ type NodesLxcVmdiridxRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesLxcVmdiridxResponse []NodesLxcVmdiridxResponseItem
+
 type NodesLxcVmdiridxResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` //
 }
-
-type NodesLxcVmdiridxResponse []NodesLxcVmdiridxResponseItem
 
 // Directory index
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}

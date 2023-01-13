@@ -8,10 +8,10 @@ import (
 
 type ClusterCephCephindexRequest interface{}
 
+type ClusterCephCephindexResponse []ClusterCephCephindexResponseItem
+
 type ClusterCephCephindexResponseItem struct {
 }
-
-type ClusterCephCephindexResponse []ClusterCephCephindexResponseItem
 
 // Cluster ceph index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/ceph

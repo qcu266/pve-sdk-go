@@ -10,9 +10,7 @@ type NodesCephPoolsLspoolsRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
-type NodesCephPoolsLspoolsResponseItemAutoscaleStatus interface{}
-
-type NodesCephPoolsLspoolsResponseItemApplicationMetadata interface{}
+type NodesCephPoolsLspoolsResponse []NodesCephPoolsLspoolsResponseItem
 
 type NodesCephPoolsLspoolsResponseItem struct {
 	ApplicationMetadata *NodesCephPoolsLspoolsResponseItemApplicationMetadata `json:"application_metadata,omitempty"` //
@@ -34,7 +32,9 @@ type NodesCephPoolsLspoolsResponseItem struct {
 	Type                string                                                `json:"type,omitempty"`                 //
 }
 
-type NodesCephPoolsLspoolsResponse []NodesCephPoolsLspoolsResponseItem
+type NodesCephPoolsLspoolsResponseItemApplicationMetadata interface{}
+
+type NodesCephPoolsLspoolsResponseItemAutoscaleStatus interface{}
 
 // List all pools.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph/pools

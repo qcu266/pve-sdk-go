@@ -10,10 +10,10 @@ type NodesCephRulesRulesRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCephRulesRulesResponse []NodesCephRulesRulesResponseItem
+
 type NodesCephRulesRulesResponseItem struct {
 }
-
-type NodesCephRulesRulesResponse []NodesCephRulesRulesResponseItem
 
 // List ceph rules.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph/rules

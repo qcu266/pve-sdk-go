@@ -12,6 +12,8 @@ type ClusterSdnZonesIndexRequest struct {
 	Type    *string `query:"type,omitempty"`    // Only list SDN zones of specific type
 }
 
+type ClusterSdnZonesIndexResponse []ClusterSdnZonesIndexResponseItem
+
 type ClusterSdnZonesIndexResponseItem struct {
 	Dns        *string `json:"dns,omitempty"`        //
 	Dnszone    *string `json:"dnszone,omitempty"`    //
@@ -24,8 +26,6 @@ type ClusterSdnZonesIndexResponseItem struct {
 	Type       string  `json:"type,omitempty"`       //
 	Zone       string  `json:"zone,omitempty"`       //
 }
-
-type ClusterSdnZonesIndexResponse []ClusterSdnZonesIndexResponseItem
 
 // SDN zones index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/sdn/zones

@@ -11,13 +11,13 @@ type NodesSdnZonesContentIndexRequest struct {
 	Zone string `query:"zone,omitempty"` // The SDN zone object identifier.
 }
 
+type NodesSdnZonesContentIndexResponse []NodesSdnZonesContentIndexResponseItem
+
 type NodesSdnZonesContentIndexResponseItem struct {
 	Status    *string `json:"status,omitempty"`    // Status.
 	Statusmsg *string `json:"statusmsg,omitempty"` // Status details
 	Vnet      string  `json:"vnet,omitempty"`      // Vnet identifier.
 }
-
-type NodesSdnZonesContentIndexResponse []NodesSdnZonesContentIndexResponseItem
 
 // List zone content.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/sdn/zones/{zone}/content

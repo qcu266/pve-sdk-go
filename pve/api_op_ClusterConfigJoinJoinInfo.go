@@ -10,6 +10,13 @@ type ClusterConfigJoinJoinInfoRequest struct {
 	Node *string `query:"node,omitempty"` // The node for which the joinee gets the nodeinfo.
 }
 
+type ClusterConfigJoinJoinInfoResponse struct {
+	ConfigDigest  string                                          `json:"config_digest,omitempty"`  //
+	Nodelist      []ClusterConfigJoinJoinInfoResponseNodelistItem `json:"nodelist,omitempty"`       //
+	PreferredNode string                                          `json:"preferred_node,omitempty"` // The cluster node name.
+	Totem         ClusterConfigJoinJoinInfoResponseTotem          `json:"totem,omitempty"`          //
+}
+
 type ClusterConfigJoinJoinInfoResponseNodelistItem struct {
 	Name        string  `json:"name,omitempty"`         // The cluster node name.
 	Nodeid      *int64  `json:"nodeid,omitempty"`       // Node id for this node.
@@ -20,13 +27,6 @@ type ClusterConfigJoinJoinInfoResponseNodelistItem struct {
 }
 
 type ClusterConfigJoinJoinInfoResponseTotem interface{}
-
-type ClusterConfigJoinJoinInfoResponse struct {
-	ConfigDigest  string                                          `json:"config_digest,omitempty"`  //
-	Nodelist      []ClusterConfigJoinJoinInfoResponseNodelistItem `json:"nodelist,omitempty"`       //
-	PreferredNode string                                          `json:"preferred_node,omitempty"` // The cluster node name.
-	Totem         ClusterConfigJoinJoinInfoResponseTotem          `json:"totem,omitempty"`          //
-}
 
 // Get information needed to join this cluster over the connected node.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/config/join

@@ -8,7 +8,7 @@ import (
 
 type ClusterAcmeChallengeSchemaChallengeschemaRequest interface{}
 
-type ClusterAcmeChallengeSchemaChallengeschemaResponseItemSchema interface{}
+type ClusterAcmeChallengeSchemaChallengeschemaResponse []ClusterAcmeChallengeSchemaChallengeschemaResponseItem
 
 type ClusterAcmeChallengeSchemaChallengeschemaResponseItem struct {
 	Id     string                                                      `json:"id,omitempty"`     //
@@ -17,7 +17,7 @@ type ClusterAcmeChallengeSchemaChallengeschemaResponseItem struct {
 	Type   string                                                      `json:"type,omitempty"`   //
 }
 
-type ClusterAcmeChallengeSchemaChallengeschemaResponse []ClusterAcmeChallengeSchemaChallengeschemaResponseItem
+type ClusterAcmeChallengeSchemaChallengeschemaResponseItemSchema interface{}
 
 // Get schema of ACME challenge types.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/acme/challenge-schema

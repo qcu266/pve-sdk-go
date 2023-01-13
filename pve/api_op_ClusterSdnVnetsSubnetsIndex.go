@@ -12,10 +12,10 @@ type ClusterSdnVnetsSubnetsIndexRequest struct {
 	Vnet    string `query:"vnet,omitempty"`    // The SDN vnet object identifier.
 }
 
+type ClusterSdnVnetsSubnetsIndexResponse []ClusterSdnVnetsSubnetsIndexResponseItem
+
 type ClusterSdnVnetsSubnetsIndexResponseItem struct {
 }
-
-type ClusterSdnVnetsSubnetsIndexResponse []ClusterSdnVnetsSubnetsIndexResponseItem
 
 // SDN subnets index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/sdn/vnets/{vnet}/subnets

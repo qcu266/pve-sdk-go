@@ -15,12 +15,12 @@ type NodesSyslogSyslogRequest struct {
 	Until   *string `query:"until,omitempty"`   // Display all log until this date-time string.
 }
 
+type NodesSyslogSyslogResponse []NodesSyslogSyslogResponseItem
+
 type NodesSyslogSyslogResponseItem struct {
 	N int64  `json:"n,omitempty"` // Line number
 	T string `json:"t,omitempty"` // Line text
 }
-
-type NodesSyslogSyslogResponse []NodesSyslogSyslogResponseItem
 
 // Read system log
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/syslog

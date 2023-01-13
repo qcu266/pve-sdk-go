@@ -11,11 +11,11 @@ type NodesSdnZonesDiridxRequest struct {
 	Zone string `query:"zone,omitempty"` // The SDN zone object identifier.
 }
 
+type NodesSdnZonesDiridxResponse []NodesSdnZonesDiridxResponseItem
+
 type NodesSdnZonesDiridxResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` //
 }
-
-type NodesSdnZonesDiridxResponse []NodesSdnZonesDiridxResponseItem
 
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/sdn/zones/{zone}
 func (c *Client) NodesSdnZonesDiridx(ctx context.Context, request *NodesSdnZonesDiridxRequest) (*NodesSdnZonesDiridxResponse, error) {

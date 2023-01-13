@@ -11,12 +11,12 @@ type NodesScanIscsiIscsiscanRequest struct {
 	Portal string `query:"portal,omitempty"` // The iSCSI portal (IP or DNS name with optional port).
 }
 
+type NodesScanIscsiIscsiscanResponse []NodesScanIscsiIscsiscanResponseItem
+
 type NodesScanIscsiIscsiscanResponseItem struct {
 	Portal string `json:"portal,omitempty"` // The iSCSI portal name.
 	Target string `json:"target,omitempty"` // The iSCSI target name.
 }
-
-type NodesScanIscsiIscsiscanResponse []NodesScanIscsiIscsiscanResponseItem
 
 // Scan remote iSCSI server.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan/iscsi

@@ -8,11 +8,11 @@ import (
 
 type ClusterFirewallRulesGetRulesRequest interface{}
 
+type ClusterFirewallRulesGetRulesResponse []ClusterFirewallRulesGetRulesResponseItem
+
 type ClusterFirewallRulesGetRulesResponseItem struct {
 	Pos int64 `json:"pos,omitempty"` //
 }
-
-type ClusterFirewallRulesGetRulesResponse []ClusterFirewallRulesGetRulesResponseItem
 
 // List rules.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall/rules

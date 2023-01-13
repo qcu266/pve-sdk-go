@@ -10,6 +10,8 @@ type NodesCephConfigdbConfigdbRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCephConfigdbConfigdbResponse []NodesCephConfigdbConfigdbResponseItem
+
 type NodesCephConfigdbConfigdbResponseItem struct {
 	CanUpdateAtRuntime bool   `json:"can_update_at_runtime,omitempty"` //
 	Level              string `json:"level,omitempty"`                 //
@@ -18,8 +20,6 @@ type NodesCephConfigdbConfigdbResponseItem struct {
 	Section            string `json:"section,omitempty"`               //
 	Value              string `json:"value,omitempty"`                 //
 }
-
-type NodesCephConfigdbConfigdbResponse []NodesCephConfigdbConfigdbResponseItem
 
 // Get Ceph configuration database.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph/configdb

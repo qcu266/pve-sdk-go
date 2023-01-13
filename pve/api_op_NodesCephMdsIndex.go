@@ -10,6 +10,8 @@ type NodesCephMdsIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesCephMdsIndexResponse []NodesCephMdsIndexResponseItem
+
 type NodesCephMdsIndexResponseItem struct {
 	Addr          *string `json:"addr,omitempty"`           //
 	Host          *string `json:"host,omitempty"`           //
@@ -18,8 +20,6 @@ type NodesCephMdsIndexResponseItem struct {
 	StandbyReplay *bool   `json:"standby_replay,omitempty"` // If true, the standby MDS is polling the active MDS for faster recovery (hot standby).
 	State         string  `json:"state,omitempty"`          // State of the MDS
 }
-
-type NodesCephMdsIndexResponse []NodesCephMdsIndexResponseItem
 
 // MDS directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/ceph/mds

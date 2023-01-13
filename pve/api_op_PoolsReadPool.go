@@ -11,17 +11,17 @@ type PoolsReadPoolRequest struct {
 	Type   *string `query:"type,omitempty"`   //
 }
 
+type PoolsReadPoolResponse struct {
+	Comment *string                            `json:"comment,omitempty"` //
+	Members []PoolsReadPoolResponseMembersItem `json:"members,omitempty"` //
+}
+
 type PoolsReadPoolResponseMembersItem struct {
 	Id      string  `json:"id,omitempty"`      //
 	Node    string  `json:"node,omitempty"`    //
 	Storage *string `json:"storage,omitempty"` //
 	Type    string  `json:"type,omitempty"`    //
 	Vmid    *int64  `json:"vmid,omitempty"`    //
-}
-
-type PoolsReadPoolResponse struct {
-	Comment *string                            `json:"comment,omitempty"` //
-	Members []PoolsReadPoolResponseMembersItem `json:"members,omitempty"` //
 }
 
 // Get pool configuration.

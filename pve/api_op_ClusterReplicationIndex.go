@@ -8,10 +8,10 @@ import (
 
 type ClusterReplicationIndexRequest interface{}
 
+type ClusterReplicationIndexResponse []ClusterReplicationIndexResponseItem
+
 type ClusterReplicationIndexResponseItem struct {
 }
-
-type ClusterReplicationIndexResponse []ClusterReplicationIndexResponseItem
 
 // List replication jobs.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/replication

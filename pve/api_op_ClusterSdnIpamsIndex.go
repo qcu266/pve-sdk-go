@@ -10,12 +10,12 @@ type ClusterSdnIpamsIndexRequest struct {
 	Type *string `query:"type,omitempty"` // Only list sdn ipams of specific type
 }
 
+type ClusterSdnIpamsIndexResponse []ClusterSdnIpamsIndexResponseItem
+
 type ClusterSdnIpamsIndexResponseItem struct {
 	Ipam string `json:"ipam,omitempty"` //
 	Type string `json:"type,omitempty"` //
 }
-
-type ClusterSdnIpamsIndexResponse []ClusterSdnIpamsIndexResponseItem
 
 // SDN ipams index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/sdn/ipams

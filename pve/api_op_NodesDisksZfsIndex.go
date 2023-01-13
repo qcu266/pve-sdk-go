@@ -10,6 +10,8 @@ type NodesDisksZfsIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesDisksZfsIndexResponse []NodesDisksZfsIndexResponseItem
+
 type NodesDisksZfsIndexResponseItem struct {
 	Alloc  int64   `json:"alloc,omitempty"`  //
 	Dedup  float64 `json:"dedup,omitempty"`  //
@@ -19,8 +21,6 @@ type NodesDisksZfsIndexResponseItem struct {
 	Name   string  `json:"name,omitempty"`   //
 	Size   int64   `json:"size,omitempty"`   //
 }
-
-type NodesDisksZfsIndexResponse []NodesDisksZfsIndexResponseItem
 
 // List Zpools.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/disks/zfs

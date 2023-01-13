@@ -11,10 +11,10 @@ type NodesNetworkIndexRequest struct {
 	Type *string `query:"type,omitempty"` // Only list specific interface types.
 }
 
+type NodesNetworkIndexResponse []NodesNetworkIndexResponseItem
+
 type NodesNetworkIndexResponseItem struct {
 }
-
-type NodesNetworkIndexResponse []NodesNetworkIndexResponseItem
 
 // List available networks
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/network

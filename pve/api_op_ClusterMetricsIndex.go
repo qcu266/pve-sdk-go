@@ -8,10 +8,10 @@ import (
 
 type ClusterMetricsIndexRequest interface{}
 
+type ClusterMetricsIndexResponse []ClusterMetricsIndexResponseItem
+
 type ClusterMetricsIndexResponseItem struct {
 }
-
-type ClusterMetricsIndexResponse []ClusterMetricsIndexResponseItem
 
 // Metrics index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/metrics

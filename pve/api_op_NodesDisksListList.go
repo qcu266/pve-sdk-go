@@ -13,6 +13,8 @@ type NodesDisksListListRequest struct {
 	Type              *string `query:"type,omitempty"`               // Only list specific types of disks.
 }
 
+type NodesDisksListListResponse []NodesDisksListListResponseItem
+
 type NodesDisksListListResponseItem struct {
 	Devpath string  `json:"devpath,omitempty"` // The device path
 	Gpt     bool    `json:"gpt,omitempty"`     //
@@ -27,8 +29,6 @@ type NodesDisksListListResponseItem struct {
 	Vendor  *string `json:"vendor,omitempty"`  //
 	Wwn     *string `json:"wwn,omitempty"`     //
 }
-
-type NodesDisksListListResponse []NodesDisksListListResponseItem
 
 // List local disks.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/disks/list

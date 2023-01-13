@@ -11,11 +11,11 @@ type NodesReplicationStatusRequest struct {
 	Node  string `query:"node,omitempty"`  // The cluster node name.
 }
 
+type NodesReplicationStatusResponse []NodesReplicationStatusResponseItem
+
 type NodesReplicationStatusResponseItem struct {
 	Id string `json:"id,omitempty"` //
 }
-
-type NodesReplicationStatusResponse []NodesReplicationStatusResponseItem
 
 // List status of all replication jobs on this node.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/replication

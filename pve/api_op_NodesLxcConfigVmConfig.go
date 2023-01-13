@@ -13,8 +13,6 @@ type NodesLxcConfigVmConfigRequest struct {
 	Vmid     int64   `query:"vmid,omitempty"`     // The (unique) ID of the VM.
 }
 
-type NodesLxcConfigVmConfigResponseLxcItem []string
-
 type NodesLxcConfigVmConfigResponse struct {
 	Arch         *string                                  `json:"arch,omitempty"`         // OS architecture type.
 	Cmode        *string                                  `json:"cmode,omitempty"`        // Console mode. By default, the console command tries to open a connection to one of the available tty devices. By setting cmode to 'console' it tries to attach to /dev/console instead. If you set cmode to 'shell', it simply invokes a shell inside the container (no login).
@@ -48,6 +46,8 @@ type NodesLxcConfigVmConfigResponse struct {
 	Unprivileged *bool                                    `json:"unprivileged,omitempty"` // Makes the container run as unprivileged user. (Should not be modified manually.)
 	Unusedn      *string                                  `json:"unused[n],omitempty"`    // Reference to unused volumes. This is used internally, and should not be modified manually.
 }
+
+type NodesLxcConfigVmConfigResponseLxcItem []string
 
 // Get container configuration.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}/config

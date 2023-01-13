@@ -8,14 +8,14 @@ import (
 
 type AccessDomainsIndexRequest interface{}
 
+type AccessDomainsIndexResponse []AccessDomainsIndexResponseItem
+
 type AccessDomainsIndexResponseItem struct {
 	Comment *string `json:"comment,omitempty"` // A comment. The GUI use this text when you select a domain (Realm) on the login window.
 	Realm   string  `json:"realm,omitempty"`   //
 	Tfa     *string `json:"tfa,omitempty"`     // Two-factor authentication provider.
 	Type    string  `json:"type,omitempty"`    //
 }
-
-type AccessDomainsIndexResponse []AccessDomainsIndexResponseItem
 
 // Authentication domain index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/access/domains

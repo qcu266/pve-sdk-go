@@ -11,11 +11,11 @@ type NodesStorageDiridxRequest struct {
 	Storage string `query:"storage,omitempty"` // The storage identifier.
 }
 
+type NodesStorageDiridxResponse []NodesStorageDiridxResponseItem
+
 type NodesStorageDiridxResponseItem struct {
 	Subdir string `json:"subdir,omitempty"` //
 }
-
-type NodesStorageDiridxResponse []NodesStorageDiridxResponseItem
 
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/storage/{storage}
 func (c *Client) NodesStorageDiridx(ctx context.Context, request *NodesStorageDiridxRequest) (*NodesStorageDiridxResponse, error) {

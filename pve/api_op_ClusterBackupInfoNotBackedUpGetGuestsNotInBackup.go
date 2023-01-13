@@ -8,14 +8,14 @@ import (
 
 type ClusterBackupInfoNotBackedUpGetGuestsNotInBackupRequest interface{}
 
+// Contains the guest objects.
+type ClusterBackupInfoNotBackedUpGetGuestsNotInBackupResponse []ClusterBackupInfoNotBackedUpGetGuestsNotInBackupResponseItem
+
 type ClusterBackupInfoNotBackedUpGetGuestsNotInBackupResponseItem struct {
 	Name *string `json:"name,omitempty"` // Name of the guest
 	Type string  `json:"type,omitempty"` // Type of the guest.
 	Vmid int64   `json:"vmid,omitempty"` // VMID of the guest.
 }
-
-// Contains the guest objects.
-type ClusterBackupInfoNotBackedUpGetGuestsNotInBackupResponse []ClusterBackupInfoNotBackedUpGetGuestsNotInBackupResponseItem
 
 // Shows all guests which are not covered by any backup job.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/backup-info/not-backed-up

@@ -12,9 +12,6 @@ type NodesQemuMigrateMigrateVmPreconditionRequest struct {
 	Vmid   int64   `query:"vmid,omitempty"`   // The (unique) ID of the VM.
 }
 
-// List not allowed nodes with additional informations, only passed if VM is offline
-type NodesQemuMigrateMigrateVmPreconditionResponseNotAllowedNodes interface{}
-
 type NodesQemuMigrateMigrateVmPreconditionResponse struct {
 	AllowedNodes    *[]interface{}                                                `json:"allowed_nodes,omitempty"`     // List nodes allowed for offline migration, only passed if VM is offline
 	LocalDisks      []interface{}                                                 `json:"local_disks,omitempty"`       // List local disks including CD-Rom, unsused and not referenced disks
@@ -22,6 +19,9 @@ type NodesQemuMigrateMigrateVmPreconditionResponse struct {
 	NotAllowedNodes *NodesQemuMigrateMigrateVmPreconditionResponseNotAllowedNodes `json:"not_allowed_nodes,omitempty"` // List not allowed nodes with additional informations, only passed if VM is offline
 	Running         bool                                                          `json:"running,omitempty"`           //
 }
+
+// List not allowed nodes with additional informations, only passed if VM is offline
+type NodesQemuMigrateMigrateVmPreconditionResponseNotAllowedNodes interface{}
 
 // Get preconditions for migration.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/migrate

@@ -8,11 +8,11 @@ import (
 
 type ClusterCephFlagsGetAllFlagsRequest interface{}
 
+type ClusterCephFlagsGetAllFlagsResponse []ClusterCephFlagsGetAllFlagsResponseItem
+
 type ClusterCephFlagsGetAllFlagsResponseItem struct {
 	Name string `json:"name,omitempty"` // Flag name.
 }
-
-type ClusterCephFlagsGetAllFlagsResponse []ClusterCephFlagsGetAllFlagsResponseItem
 
 // get the status of all ceph flags
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/ceph/flags

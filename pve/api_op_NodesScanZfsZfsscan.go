@@ -10,11 +10,11 @@ type NodesScanZfsZfsscanRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesScanZfsZfsscanResponse []NodesScanZfsZfsscanResponseItem
+
 type NodesScanZfsZfsscanResponseItem struct {
 	Pool string `json:"pool,omitempty"` // ZFS pool name.
 }
-
-type NodesScanZfsZfsscanResponse []NodesScanZfsZfsscanResponseItem
 
 // Scan zfs pool list on local node.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/scan/zfs

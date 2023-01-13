@@ -10,10 +10,10 @@ type NodesAplinfoAplinfoRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesAplinfoAplinfoResponse []NodesAplinfoAplinfoResponseItem
+
 type NodesAplinfoAplinfoResponseItem struct {
 }
-
-type NodesAplinfoAplinfoResponse []NodesAplinfoAplinfoResponseItem
 
 // Get list of appliances.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/aplinfo

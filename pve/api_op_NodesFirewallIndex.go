@@ -10,10 +10,10 @@ type NodesFirewallIndexRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
+type NodesFirewallIndexResponse []NodesFirewallIndexResponseItem
+
 type NodesFirewallIndexResponseItem struct {
 }
-
-type NodesFirewallIndexResponse []NodesFirewallIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/firewall

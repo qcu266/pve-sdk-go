@@ -10,10 +10,10 @@ type ClusterLogLogRequest struct {
 	Max *int64 `query:"max,omitempty"` // Maximum number of entries.
 }
 
+type ClusterLogLogResponse []ClusterLogLogResponseItem
+
 type ClusterLogLogResponseItem struct {
 }
-
-type ClusterLogLogResponse []ClusterLogLogResponseItem
 
 // Read cluster log
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/log

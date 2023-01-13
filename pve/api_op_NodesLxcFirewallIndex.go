@@ -11,10 +11,10 @@ type NodesLxcFirewallIndexRequest struct {
 	Vmid int64  `query:"vmid,omitempty"` // The (unique) ID of the VM.
 }
 
+type NodesLxcFirewallIndexResponse []NodesLxcFirewallIndexResponseItem
+
 type NodesLxcFirewallIndexResponseItem struct {
 }
-
-type NodesLxcFirewallIndexResponse []NodesLxcFirewallIndexResponseItem
 
 // Directory index.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/lxc/{vmid}/firewall

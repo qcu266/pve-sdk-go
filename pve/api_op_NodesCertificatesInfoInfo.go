@@ -10,7 +10,7 @@ type NodesCertificatesInfoInfoRequest struct {
 	Node string `query:"node,omitempty"` // The cluster node name.
 }
 
-type NodesCertificatesInfoInfoResponseItemSanItem string
+type NodesCertificatesInfoInfoResponse []NodesCertificatesInfoInfoResponseItem
 
 type NodesCertificatesInfoInfoResponseItem struct {
 	Filename      *string                                         `json:"filename,omitempty"`        //
@@ -25,7 +25,7 @@ type NodesCertificatesInfoInfoResponseItem struct {
 	Subject       *string                                         `json:"subject,omitempty"`         // Certificate subject name.
 }
 
-type NodesCertificatesInfoInfoResponse []NodesCertificatesInfoInfoResponseItem
+type NodesCertificatesInfoInfoResponseItemSanItem string
 
 // Get information about node's certificates.
 // https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/certificates/info

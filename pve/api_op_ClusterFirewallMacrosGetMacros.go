@@ -8,12 +8,12 @@ import (
 
 type ClusterFirewallMacrosGetMacrosRequest interface{}
 
+type ClusterFirewallMacrosGetMacrosResponse []ClusterFirewallMacrosGetMacrosResponseItem
+
 type ClusterFirewallMacrosGetMacrosResponseItem struct {
 	Descr string `json:"descr,omitempty"` // More verbose description (if available).
 	Macro string `json:"macro,omitempty"` // Macro name.
 }
-
-type ClusterFirewallMacrosGetMacrosResponse []ClusterFirewallMacrosGetMacrosResponseItem
 
 // List available macros
 // https://pve.proxmox.com/pve-docs/api-viewer/#/cluster/firewall/macros
