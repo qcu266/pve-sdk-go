@@ -1,5 +1,5 @@
 
-API_SCHEMA_FILE = schema/apidata.js
+API_SCHEMA_FILE = schema/apidata.js.data
 
 
 .PHONY: help
